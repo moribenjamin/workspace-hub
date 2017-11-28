@@ -14,81 +14,109 @@ import javax.persistence.ManyToOne;
 @Entity
 public class WorkspaceHub {
 
-@Id
-@GeneratedValue
-private Long id;
+	@Id
+	@GeneratedValue
+	private Long id;
 
-private String name;
-@Lob
-private String description;
+	private String name;
+	private String email;
+	private String address;
+	private String phoneNumber;
+	private String website;
+	@Lob
+	private String description;
 
-@ManyToOne
-private SpaceType spaceType;
+	@ManyToOne
+	private SpaceType spaceType;
 
-@ManyToMany
-private Set<Feature> features;
+	@ManyToMany
+	private Set<Feature> features;
 
-@ManyToOne
-private Hours hours;
-@ManyToOne
-private Parking parking;
-@ManyToOne
-private Cost cost;
-@ManyToOne
-private Capacity capacity;
+	@ManyToOne
+	private Hours hours;
+	@ManyToOne
+	private Parking parking;
+	@ManyToOne
+	private Cost cost;
+	@ManyToOne
+	private Capacity capacity;
 
+	protected WorkspaceHub() {
+	}
 
-protected WorkspaceHub() {}
+	public WorkspaceHub(String name, String email, String website, String address, String phoneNumber,
+			String description, SpaceType spaceType, Hours hours, Parking parking, Cost cost, Capacity capacity,
+			Feature... features) {
+		this.name = name;
+		this.email = email;
+		this.website = website;
+		this.address = address;
+		this.phoneNumber = phoneNumber;
+		this.description = description;
+		this.spaceType = spaceType;
+		this.hours = hours;
+		this.parking = parking;
+		this.cost = cost;
+		this.capacity = capacity;
+		this.features = new HashSet<Feature>(Arrays.asList(features));
+	}
 
-public WorkspaceHub(String name, String description, SpaceType spaceType, Hours hours, Parking parking, Cost cost, Capacity capacity, Feature... features) {
-	this.name = name;
-	this.description = description;
-	this.spaceType= spaceType;
-	this.hours = hours;
-	this.parking = parking;
-	this.cost= cost;
-	this.capacity = capacity;
-	this.features = new HashSet<Feature>(Arrays.asList(features));
-}
+	public Long getId() {
+		return id;
+	}
 
-public Long getId() {
-	return id;
-}
+	public String getName() {
+		return name;
+	}
 
-public String getName() {
-	return name;
-}
+	public String getEmail() {
+		return email;
+	}
 
-public String getDescription() {
-	return description;
-}
+	public String getAddress() {
+		return address;
+	}
 
-public SpaceType getSpaceType() {
-	return spaceType;
-}
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
 
-public Set<Feature> getFeatures() {
-	return features;
-}
+	public String getWebsite() {
+		return website;
+	}
 
-public Hours getHours() {
-	return hours;
-}
+	public String getDescription() {
+		return description;
+	}
 
-public Parking getParking() {
-	return parking;
-}
+	public SpaceType getSpaceType() {
+		return spaceType;
+	}
 
-public Cost getCost() {
-	return cost;
-}
+	public Set<Feature> getFeatures() {
+		return features;
+	}
 
-public Capacity getCapacity() {
-	return capacity;
-}
-@Override
-public String toString() {
-	return String.format("WorkspaceHub[name='%s', description='%s', spaceType='%s',features='%s', hours='%s', parking='%s', cost='%s',capacity='%s']", name,
-			description, spaceType, features, hours, parking, cost, capacity);
-}
+	public Hours getHours() {
+		return hours;
+	}
+
+	public Parking getParking() {
+		return parking;
+	}
+
+	public Cost getCost() {
+		return cost;
+	}
+
+	public Capacity getCapacity() {
+		return capacity;
+	}
+
+	@Override
+	public String toString() {
+		return String.format(
+				"WorkspaceHub[name='%s', email='%s', website='%s', address='%s, phoneNumber='%s',description='%s', spaceType='%s',features='%s', hours='%s', parking='%s', cost='%s',capacity='%s']",
+				name, description, spaceType, features, hours, parking, cost, capacity);
+	}
 }

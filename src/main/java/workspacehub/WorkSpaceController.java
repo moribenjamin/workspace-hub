@@ -5,6 +5,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class WorkSpaceController {
@@ -41,4 +42,12 @@ public class WorkSpaceController {
 		model.addAttribute("capacity", capacityRepo.findAll());
 		return "splashPage";
 	}
+	
+	@RequestMapping("/space_type")
+	public String getOneSpaceType(@RequestParam Long id, Model model) {
+		model.addAttribute("spacetype", spaceTypeRepo.findOne(id));
+		return "spacetype";
+	}
+
+	
 }
