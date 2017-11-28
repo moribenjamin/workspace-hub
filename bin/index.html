@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>WorkSpace Hub -- Home</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<div class="title-header">
+		<h1>Workspace &#x2423 Hub</h1>
+		<h2>Find a spot to make the next big thing.</h2>
+		</div>
+		<div class="navigation">
+			<nav>
+				<ul>
+					<li>Home</li>
+					<li>Categories</li>
+					<li>About Us</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div class="home-images">
+    <li th:each="spaceType: ${spaceTypes}">
+		  <a th:href="@{/space_type(id=${spaceType.spaceTypeId})}" th:text="${spaceType.spaceTitle}"></a>
+    </li>
+	</div>
+
+	<footer>
+		<p>Copyright 2017</p>
+		<div class="contact-stuff">
+			<a href=""><img src="" alt="facebook"></a>
+			<a href=""><img src="" alt="twitter"></a>
+			<a href=""><img src="" alt="email"></a>
+		</div>
+	</footer>
+
+</body>
+</html>
