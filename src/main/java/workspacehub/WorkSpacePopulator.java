@@ -74,35 +74,51 @@ public class WorkSpacePopulator implements CommandLineRunner {
 		Capacity cap = new Capacity("100");
 		capacityRepo.save(cap);
 
+		workspaceHubRepo.save(new WorkspaceHub("Serendipity Labs", "info@csuitesoffices.com",
+				"http://serendipitylabs.com", "21 E State St, Columbus, OH 43215", "(614) 705-2212", "djskdkjsak",
+				coworkingSpace, hours1, garage, expensive, cap));
+		workspaceHubRepo.save(new WorkspaceHub("Saltmines South", "email", "http://2997indianola.spaces.nexudus.com/en",
+				"2997 Indianola", "(614) 859-9559", "djskdkjsak", coworkingSpace, hours2, freeStreet, moderate, cap));
+		workspaceHubRepo.save(new WorkspaceHub("Saltmines North", "email",
+				"http://3820highstreet.spaces.nexudus.com/en", "3820 N High Street", "(614) 859-9559", "djskdkjsak",
+				coworkingSpace, hours2, freeStreet, moderate, cap));
+		workspaceHubRepo.save(new WorkspaceHub("The Perch", "work@theperchshortnorth.com", "theperchshortnorth.com",
+				"45 E Lincoln St, Columbus, OH 43215", "(614) 769-7131", "djskdkjsak", coworkingSpace, hours3, onSite,
+				moderate, cap));
 		workspaceHubRepo.save(
-				new WorkspaceHub("Serendipity Labs", "djskdkjsak", coworkingSpace, hours1, garage, expensive, cap));
-		workspaceHubRepo.save(
-				new WorkspaceHub("Saltmines South", "djskdkjsak", coworkingSpace, hours2, freeStreet, moderate, cap));
-		workspaceHubRepo.save(
-				new WorkspaceHub("Saltmines North", "djskdkjsak", coworkingSpace, hours2, freeStreet, moderate, cap));
-		workspaceHubRepo
-				.save(new WorkspaceHub("The Perch", "djskdkjsak", coworkingSpace, hours3, onSite, moderate, cap));
-		workspaceHubRepo.save(
-				new WorkspaceHub("The Hub on Kenney", "djskdkjsak", coworkingSpace, hours4, onSite, moderate, cap));
-		workspaceHubRepo.save(
-				new WorkspaceHub("Cup O Joe Coffee House", "djskdkjsak", coffeeShop, hours5, onSite, coffee, cap));
-		workspaceHubRepo.save(
-				new WorkspaceHub("Starbucks Clintonville", "djskdkjsak", coffeeShop, hours8, onSite, coffee, cap));
-		workspaceHubRepo.save(
-				new WorkspaceHub("Crimson Cup Clintonville", "djskdkjsak", coffeeShop, hours9, onSite, coffee, cap));
-		workspaceHubRepo.save(new WorkspaceHub("Giant Eagle Market District", "djskdkjsak", coffeeShop, hours10, onSite,
+				new WorkspaceHub("The Hub on Kenney", "email", "thehubonkenny.com", "4510 Kenny Rd, Columbus, OH 43220",
+						"(614) 845-5001", "djskdkjsak", coworkingSpace, hours4, onSite, moderate, cap));
+		workspaceHubRepo.save(new WorkspaceHub("Cup O Joe Coffee House", "email", "http://www.cupojoe.com/",
+				"2990 N High St, Columbus, OH 43202", "(614) 225-1563", "djskdkjsak", coffeeShop, hours5, onSite,
 				coffee, cap));
-		workspaceHubRepo
-				.save(new WorkspaceHub("Mission Coffee", "djskdkjsak", coffeeShop, hours2, freeStreet, coffee, cap));
-		workspaceHubRepo.save(new WorkspaceHub("The Point-Otterbein University", "djskdkjsak", library, hours7, onSite,
+		workspaceHubRepo.save(new WorkspaceHub("Starbucks Clintonville", "email",
+				"https://www.starbucks.com/store-locator/store/1011597/north-high-and-east-torrence-3580-north-high-street-columbus-oh-43214-us",
+				"3580 N High St, Columbus, OH 43214", "(614) 263-1292", "djskdkjsak", coffeeShop, hours8, onSite,
+				coffee, cap));
+		workspaceHubRepo.save(new WorkspaceHub("Crimson Cup Clintonville", "email",
+				"https://www.crimsoncup.com/about/clintonville", "4541 N High St, Columbus, OH 43214", "(614) 262-6212",
+				"djskdkjsak", coffeeShop, hours9, onSite, coffee, cap));
+		workspaceHubRepo.save(new WorkspaceHub("Giant Eagle Market District", "email",
+				"https://www.marketdistrict.com/", "840 W 3rd Ave, Columbus, OH 43212", "(614) 294-2186", "djskdkjsak",
+				coffeeShop, hours10, onSite, coffee, cap));
+		workspaceHubRepo.save(new WorkspaceHub("Mission Coffee", "email", "https://www.missioncoffeeco.com/",
+				"11 Price Ave, Columbus, OH 43201", "(614) 300-0648", "djskdkjsak", coffeeShop, hours2, freeStreet,
+				coffee, cap));
+		workspaceHubRepo.save(new WorkspaceHub("The Point-Otterbein University", "email", "https://otterbeinpoint.com/",
+				"60 Collegeview Rd, Westerville, OH 43081", "(614) 823-1420", "djskdkjsak", library, hours7, onSite,
 				moderateHigh, cap));
-		workspaceHubRepo.save(new WorkspaceHub("Whetstone Library", "djskdkjsak", library, hours6, onSite, free, cap));
-		workspaceHubRepo.save(
-				new WorkspaceHub("Columbus Metropolitan Library", "djskdkjsak", library, hours7, garage, free, cap));
-		workspaceHubRepo.save(new WorkspaceHub("Northside Branch-Columbus Library", "djskdkjsak", library, hours7,
-				freeStreet, free, cap));
-		workspaceHubRepo
-				.save(new WorkspaceHub("Worthington Library", "djskdkjsak", library, hours7, onSite, free, cap));
+		workspaceHubRepo.save(new WorkspaceHub("Whetstone Library", "email", "http://www.columbuslibrary.org/",
+				"3909 N. High Street, Columbus, OH 43214", "(614) 645-2275", "djskdkjsak", library, hours6, onSite,
+				free, cap));
+		workspaceHubRepo.save(new WorkspaceHub("Columbus Metropolitan Library", "email",
+				"http://www.columbuslibrary.org/", "96 S. Grant Avenue, Coulumbus, OH 43215", "(614) 645-2275",
+				"djskdkjsak", library, hours7, garage, free, cap));
+		workspaceHubRepo.save(new WorkspaceHub("Northside Branch-Columbus Library", "email",
+				"http://www.columbuslibrary.org/", "96 S. Grant Avenue, Coulumbus, OH 43215", "(614) 645-2275",
+				"djskdkjsak", library, hours7, freeStreet, free, cap));
+		workspaceHubRepo.save(new WorkspaceHub("Worthington Library", "email", "worthingtonlibraries.org",
+				"820 High Street, Worthington, OH 43085", "614-807-2626", "djskdkjsak", library, hours7, onSite, free,
+				cap));
 
 	}
 
