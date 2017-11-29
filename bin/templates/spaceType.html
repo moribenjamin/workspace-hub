@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title>Workspace Hub -- Spacetype</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"/>
+</head>
+<body>
+  <div class="workspace-card">
+    <h2 th:text= "${spaceType.spaceTitle}"></h2>
+				<div th:each="workspaceHub: ${spaceType.workspaceHubs}">
+					<!-- <img th:src="${review.imageUrl}" alt="Picture of Restaurant"/>
+					<h2>
+						<a th:href="@{/review(id=${review.reviewId})}" th:text="${review.reviewTitle}"></a>
+					</h2> -->
+         <p th:text="${workspaceHub.name}"></p>
+          <p th:text="${workspaceHub.description}"></p>
+          <!-- <p th:text="${workspaceHub.features}"></p> -->
+          <p th:text="${workspaceHub.hours.hoursTitle}"></p>
+          <p th:text="${workspaceHub.parking.parkingTitle}"></p>
+          <p th:text="${workspaceHub.cost.costTitle}"></p>
+          <p th:text="${workspaceHub.capacity.capacityTitle}"></p>
+				</div>  
+  </div>
+</body>
+</html>

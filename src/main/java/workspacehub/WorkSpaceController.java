@@ -33,7 +33,7 @@ public class WorkSpaceController {
 
 	@RequestMapping("/")
 	public String showAllClasses(Model model) {
-		model.addAttribute("spaceTypes", spaceTypeRepo.findAll());
+		model.addAttribute("spaceType", spaceTypeRepo.findAll());
 		model.addAttribute("workspaceHubs", workspaceHubRepo.findAll());
 		model.addAttribute("parking", parkingRepo.findAll());
 		model.addAttribute("hours", hoursRepo.findAll());
@@ -43,16 +43,17 @@ public class WorkSpaceController {
 		return "splashPage";
 	}
 
-	@RequestMapping("/space_type")
-	public String getOneSpaceType(@RequestParam Long id, Model model) {
-		model.addAttribute("spacetype", spaceTypeRepo.findOne(id));
-		return "spacetype";
-	}
 
-	@RequestMapping("/index")
+	@RequestMapping("/spaceTypes")
 	public String showAllSpaceTypes(Model model) {
 		model.addAttribute("spaceTypes", spaceTypeRepo.findAll());
 		return "spaceTypes";
 	}
-
+	
+	@RequestMapping("/spaceType")
+	public String getOneSpaceType(@RequestParam Long id, Model model) {
+		model.addAttribute("spaceType", spaceTypeRepo.findOne(id));
+		return "spaceType";
+	}
+	
 }

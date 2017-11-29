@@ -39,6 +39,6 @@ public class SpaceType {
 
 	@Override
 	public String toString() {
-		return String.format("SpaceType[spaceTitle='%s']", spaceTitle);
+		return String.format("SpaceType[spaceTitle='%s', workspaceHubs='%s']", spaceTitle, workspaceHubs);
 	}
 }
