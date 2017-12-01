@@ -118,7 +118,9 @@
     <main>
       <div class="home-images">
         <div th:each="spaceType: ${spaceTypes}">
-    		  <a th:href="@{/spaceType(id=${spaceType.spaceTypeId})}" th:text="${spaceType.spaceTitle}"></a>
+    		  <a th:href="@{/spaceType(id=${spaceType.spaceTypeId})}" th:text="${spaceType.spaceTitle}">
+    		    <img class="spacetype-image" th:src="${spaceType.spaceImageUrl}" alt="Picture of type of workspace"/>
+    		  </a>
         </div>
     	</div>
     </main>
