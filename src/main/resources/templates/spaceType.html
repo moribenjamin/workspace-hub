@@ -22,6 +22,21 @@
       <p>Categories</p>
       <p>About Us</p>
     </nav>
+<<<<<<< HEAD
+    <div class="workspace-card">
+      <h2 th:text="${spaceType.spaceTitle}"></h2>
+      <div th:each="workspaceHub: ${spaceType.workspaceHubs}">
+        <img th:src="${workspaceHub.imageUrl}" alt="Picture of Workspace"/>
+					<!-- <h2>
+						<a th:href="@{/review(id=${review.reviewId})}" th:text="${review.reviewTitle}"></a>
+					</h2> -->
+        <h3 th:text="${workspaceHub.name}"></h3>
+        <!-- <p th:text="${workspaceHub.features}"></p> -->
+        <p th:text="'Hours: ' + ${workspaceHub.hours.hoursTitle}"></p>
+        <p th:text="'Parking: ' + ${workspaceHub.parking.parkingTitle}"></p>
+        <p th:text="'Cost: ' + ${workspaceHub.cost.costTitle}"></p>
+        <p th:text="'Capacity: ' + ${workspaceHub.capacity.capacityTitle}"></p>
+=======
     <main>
       <div class="workspace-card">
         <h2 th:text="${spaceType.spaceTitle}"></h2>
@@ -37,6 +52,7 @@
           <p th:text="'Cost: ' + ${workspaceHub.cost.costTitle}"></p>
           <p th:text="'Capacity: ' + ${workspaceHub.capacity.capacityTitle}"></p>
         </div>
+>>>>>>> master
       </div>
     </main>
     <footer>

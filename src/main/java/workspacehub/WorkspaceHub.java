@@ -23,6 +23,7 @@ public class WorkspaceHub {
 private Long id;
 
 private String name;
+private String imageUrl;
 @Lob
 private String description;
 
@@ -34,6 +35,7 @@ private Set<Feature> features;
 
 //@OneToOne
 //private Address address;
+
 private String address;
 
 private String email;
@@ -53,8 +55,9 @@ private Capacity capacity;
 
 protected WorkspaceHub() {}
 
-public WorkspaceHub(String name, String email,String website, String address, String phoneNumber, String description, SpaceType spaceType, Hours hours,  Parking parking, Cost cost, Capacity capacity, Feature... features) {
+public WorkspaceHub(String name, String imageUrl, String email,String website, String address, String phoneNumber, String description, SpaceType spaceType, Hours hours,  Parking parking, Cost cost, Capacity capacity, Feature... features) {
 	this.name = name;
+	this.imageUrl = imageUrl;
 	this.description = description;
 	this.spaceType= spaceType;
 	this.hours = hours;
@@ -74,6 +77,9 @@ public Long getId() {
 
 public String getName() {
 	return name;
+}
+public String getImageUrl() {
+	return imageUrl;
 }
 
 public String getDescription() {
@@ -131,7 +137,7 @@ public boolean isSpaceOpen(Hours hour) {
 }
 @Override
 public String toString() {
-	return String.format("WorkspaceHub[name='%s', description='%s', spaceType='%s',features='%s', hours='%s', parking='%s', cost='%s',capacity='%s',email='%s',address='%s'phoneNumber='%s',website='%s']", name,
+	return String.format("WorkspaceHub[name='%s', imageUrl='%s', description='%s', spaceType='%s',features='%s', hours='%s', parking='%s', cost='%s',capacity='%s',email='%s',address='%s'phoneNumber='%s',website='%s']", name, imageUrl,
 			description, spaceType, features, hours, parking, cost, capacity,email,address,phoneNumber,website);
 }
 }
