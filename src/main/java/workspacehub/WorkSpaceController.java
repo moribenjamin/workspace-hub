@@ -73,5 +73,9 @@ public class WorkSpaceController {
 		model.addAttribute("spaceType", spaceTypeRepo.findOne(id));
 		return "spaceType";
 	}
+	@RequestMapping("/locations")
+	public String getLocations () {
+	return "locations";
+	}
 
 }
