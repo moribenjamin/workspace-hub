@@ -1,0 +1,64 @@
+{
+	"addresses": [
+{
+	"name": "Serendipity Labs",
+	"address": "21 E State St, Columbus, OH 43215"
+},
+{
+	"name": "Saltmines South",
+	"address": "2997 Indianola, Columbus, OH 43202"
+},
+{
+	"name" : "Saltmines North",
+	"address": "3820 N High Street, Columbus, OH 43214"
+},
+{
+	"name": "The Perch",
+	"address": "45 E Lincoln St, Columbus, OH 43215"
+},
+{
+	"name": "The Hub on Kenny",
+	"address": "4510 Kenny Rd, Columbus, OH 43220"
+},
+{
+	"name": "Cup O Joe Coffee House",
+	"address": "2990 N High St, Columbus, OH 43202"
+},
+{
+	"name": "Starbucks Clintonville",
+	"address": "3580 N High St, Columbus, OH 43214"
+},
+{
+	"name": "Crimson Cup Clintonville",
+	"address": "4541 N High St, Columbus, OH 43214"
+},
+{
+	"name": "Giant Eagle Market District",
+	"address": "840 W 3rd Ave, Columbus, OH 43212"
+},
+{
+	"name": "Mission Coffee",
+	"address": "11 Price Ave, Columbus, OH 43201"
+},
+{
+	"name": "The Point-Otterbein University",
+	"address": "60 Collegeview Rd, Westerville, OH 43081"
+},
+{
+	"name": "Whetstone Library",
+	"address": "3909 N. High Street, Columbus, OH 43214"
+},
+{
+	"name": "Columbus Metropolitan Library", 
+	"address": "96 S. Grant Avenue, Coulumbus, OH 43215"
+},
+{
+	"name": "Northside Branch-Columbus",
+	"address": "1423 N High St, Columbus, OH 43201"
+},
+{
+	"name": "Worthington Library",
+	"address": "820 High Street, Worthington, OH 43085"
+}
+]
+}
