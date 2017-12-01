@@ -34,8 +34,17 @@ footer{
   display: flex;
   grid-column: 1/-1;
   grid-row: 4/5;
+<<<<<<< HEAD
+<<<<<<< HEAD
   justify-content: flex-end;
   align-items: center;
+=======
+  justify-content: center;
+>>>>>>> markers
+=======
+  justify-content: flex-end;
+  align-items: center;
+>>>>>>> upstream/master
 }
 .logo-image{
   height: 200px;
@@ -48,10 +57,15 @@ footer{
   height: 100%;
   justify-content: space-around;
 }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> upstream/master
 .contact-stuff img{
   width: 20px;
   height: 20px;
 }
+<<<<<<< HEAD
 .workspace-card {
   display: grid;
   grid-template-columns: repeat(3, auto );
@@ -87,3 +101,10 @@ footer{
 .card-capacity {
   grid-column: 2/3;
 }
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> markers
+=======
+>>>>>>> upstream/master
+>>>>>>> upstream/master

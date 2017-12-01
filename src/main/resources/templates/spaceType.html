@@ -15,22 +15,50 @@
 <body>
   <div class="container">
     <header>
+<<<<<<< HEAD
+<<<<<<< HEAD
       <img src="images/Logo.png" alt="logo" class="logo-image" />
+=======
+      <img src="/Logo.png" alt="logo" class="logo-image" />
+>>>>>>> markers
+=======
+      <img src="images/Logo.png" alt="logo" class="logo-image" />
+>>>>>>> upstream/master
     </header>
     <nav>
       <p>Home</p>
       <p>Categories</p>
       <p>About Us</p>
     </nav>
+<<<<<<< HEAD
     <div class="card-sections">
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> upstream/master
+    <div class="workspace-card">
+>>>>>>> upstream/master
       <h2 th:text="${spaceType.spaceTitle}"></h2>
       <div class="workspace-card" th:each="workspaceHub: ${spaceType.workspaceHubs}">
         <h3 class="card-name" th:text="${workspaceHub.name}"></h3>
         <img class="card-image" th:src="${workspaceHub.imageUrl}" alt="Picture of Work Space"/>
 					<!-- <h2>
+<<<<<<< HEAD
+=======
+    <div class="workspace-card">
+      <h2 th:text="${spaceType.spaceTitle}"></h2>
+      <div th:each="workspaceHub: ${spaceType.workspaceHubs}">
+        <!-- <img th:src="${review.imageUrl}" alt="Picture of Restaurant"/>
+					<h2>
+>>>>>>> markers
+=======
+>>>>>>> upstream/master
 						<a th:href="@{/review(id=${review.reviewId})}" th:text="${review.reviewTitle}"></a>
 					</h2> -->
         <!-- <p th:text="${workspaceHub.features}"></p> -->
+<<<<<<< HEAD
         <p class="card-address" th:text="'Address: ' + ${workspaceHub.address}"></p>
         <p class="card-website" th:text="${workspaceHub.website}"></p>
         <p class="card-hours" th:text="'Hours: ' + ${workspaceHub.hours.hoursTitle}"></p>
@@ -40,6 +68,43 @@
       </div>
     </div>
 
+=======
+        <p th:text="'Hours: ' + ${workspaceHub.hours.hoursTitle}"></p>
+        <p th:text="'Parking: ' + ${workspaceHub.parking.parkingTitle}"></p>
+        <p th:text="'Cost: ' + ${workspaceHub.cost.costTitle}"></p>
+        <p th:text="'Capacity: ' + ${workspaceHub.capacity.capacityTitle}"></p>
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> upstream/master
+=======
+    <main>
+      <div class="workspace-card">
+        <h2 th:text="${spaceType.spaceTitle}"></h2>
+        <div th:each="workspaceHub: ${spaceType.workspaceHubs}">
+          <!-- <img th:src="${review.imageUrl}" alt="Picture of Restaurant"/>
+  					<h2>
+  						<a th:href="@{/review(id=${review.reviewId})}" th:text="${review.reviewTitle}"></a>
+  					</h2> -->
+          <h3 th:text="${workspaceHub.name}"></h3>
+          <!-- <p th:text="${workspaceHub.features}"></p> -->
+          <p th:text="'Hours: ' + ${workspaceHub.hours.hoursTitle}"></p>
+          <p th:text="'Parking: ' + ${workspaceHub.parking.parkingTitle}"></p>
+          <p th:text="'Cost: ' + ${workspaceHub.cost.costTitle}"></p>
+          <p th:text="'Capacity: ' + ${workspaceHub.capacity.capacityTitle}"></p>
+        </div>
+>>>>>>> master
+      </div>
+    </main>
+<<<<<<< HEAD
+=======
+      </div>
+    </div>
+
+>>>>>>> markers
+=======
+>>>>>>> upstream/master
+>>>>>>> upstream/master
     <footer>
   		<p>Copyright 2017</p>
   		<div class="contact-stuff">
