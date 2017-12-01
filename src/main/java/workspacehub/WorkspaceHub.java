@@ -42,6 +42,8 @@ private String email;
 
 private String phoneNumber;
 private String website;
+private String facebook;
+private String twitter;
 
 @ManyToOne
 private Hours hours;
@@ -55,16 +57,18 @@ private Capacity capacity;
 
 protected WorkspaceHub() {}
 
-public WorkspaceHub(String name, String imageUrl, String email,String website, String address, String phoneNumber, String description, SpaceType spaceType, Hours hours,  Parking parking, Cost cost, Capacity capacity, Feature... features) {
+public WorkspaceHub(String name, String imageUrl, String email,String website, String facebook, String twitter, String address, String phoneNumber, String description, SpaceType spaceType, Hours hours,  Parking parking, Cost cost, Capacity capacity, Feature... features) {
 	this.name = name;
 	this.imageUrl = imageUrl;
 	this.description = description;
 	this.spaceType= spaceType;
 	this.hours = hours;
 	this.email = email;
+	this.facebook = facebook;
+	this.twitter = twitter;
 	this.phoneNumber = phoneNumber;
 	this.website = website;
-this.address = address;
+	this.address = address;
 	this.parking = parking;
 	this.cost= cost;
 	this.capacity = capacity;
@@ -126,6 +130,14 @@ public String getWebsite() {
 	return website;
 }
 
+public String getFacebook() {
+	return facebook;
+}
+
+public String getTwitter() {
+	return twitter;
+}
+
 public boolean isSpaceOpen(Hours hour) {
 	LocalTime now = LocalTime.now();
 	LocalDate date = LocalDate.now();
@@ -138,6 +150,6 @@ public boolean isSpaceOpen(Hours hour) {
 @Override
 public String toString() {
 	return String.format("WorkspaceHub[name='%s', imageUrl='%s', description='%s', spaceType='%s',features='%s', hours='%s', parking='%s', cost='%s',capacity='%s',email='%s',address='%s'phoneNumber='%s',website='%s']", name, imageUrl,
-			description, spaceType, features, hours, parking, cost, capacity,email,address,phoneNumber,website);
+			description, spaceType, features, hours, parking, cost, capacity,email,address,phoneNumber,website, facebook, twitter);
 }
 }
