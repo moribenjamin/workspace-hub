@@ -1,0 +1,28 @@
+{
+	"addresses": [
+		{
+			"name": "Serendipity Labs",
+			"address": "21 E State St, Columbus, OH 43215",
+			"lat": 40.0399790,
+			"lng": -83.0177180
+		},
+		{
+			"name": "Saltmines South",
+			"address": "2997 Indianola, Columbus, OH 43202",
+			"lat": 40.0248410,
+			"lng": -83.0017890
+		},
+		{
+			"name" : "Saltmines North",
+			"address": "3820 N High Street, Columbus, OH 43214",
+			"lat": 39.9600150,
+			"lng": -82.9995500
+		},
+		{
+			"name": "The Perch",
+			"address": "45 E Lincoln St, Columbus, OH 43215",
+			"lat": 39.9766890,
+			"lng": -83.0021070
+		}
+	]
+}
