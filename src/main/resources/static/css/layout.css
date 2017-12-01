@@ -34,7 +34,8 @@ footer{
   display: flex;
   grid-column: 1/-1;
   grid-row: 4/5;
-  justify-content: center;
+  justify-content: flex-end;
+  align-items: center;
 }
 .logo-image{
   height: 200px;
@@ -50,7 +51,4 @@ footer{
 .contact-stuff img{
   width: 20px;
   height: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
