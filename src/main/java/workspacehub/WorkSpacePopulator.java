@@ -25,11 +25,11 @@ public class WorkSpacePopulator implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		SpaceType coworkingSpace = new SpaceType("Co-working Space");
+		SpaceType coworkingSpace = new SpaceType("Co-working Space","/images/workspace.jpg" );
 		spaceTypeRepo.save(coworkingSpace);
-		SpaceType coffeeShop = new SpaceType("Coffee Shop");
+		SpaceType coffeeShop = new SpaceType("Coffee Shop", "/images/espressomachine.jpg");
 		spaceTypeRepo.save(coffeeShop);
-		SpaceType library = new SpaceType("Library");
+		SpaceType library = new SpaceType("Library", "/images/library.jpg");
 		spaceTypeRepo.save(library);
 
 
