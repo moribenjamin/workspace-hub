@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> upstream/master
  
       var map;
 
@@ -312,6 +315,7 @@
             });
         }
       }
+<<<<<<< HEAD
      
 =======
 var map;
@@ -681,3 +685,6 @@ function zoomToArea() {
 	}
 }
 >>>>>>> markers
+=======
+     
+>>>>>>> upstream/master
