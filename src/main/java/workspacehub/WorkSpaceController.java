@@ -44,7 +44,6 @@ public class WorkSpaceController {
 
 		model.addAttribute("spaceType", spaceTypeRepo.findAll());
 
-		model.addAttribute("spaceType", spaceTypeRepo.findAll());
 
 		model.addAttribute("workspaceHubs", workspaceHubRepo.findAll());
 		model.addAttribute("parking", parkingRepo.findAll());

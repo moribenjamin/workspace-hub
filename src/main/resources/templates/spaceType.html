@@ -2,28 +2,64 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Workspace Hub -- Spacetype</title>
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css?family=Carme" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+  <link rel="stylesheet" type="text/css" href="css/layout.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
+
 <body>
-  <div class="workspace-card">
-    <h2 th:text= "${spaceType.spaceTitle}"></h2>
-				<div th:each="workspaceHub: ${spaceType.workspaceHubs}">
-					<!-- <img th:src="${review.imageUrl}" alt="Picture of Restaurant"/>
-					<h2>
-						<a th:href="@{/review(id=${review.reviewId})}" th:text="${review.reviewTitle}"></a>
-					</h2> -->
-         <p th:text="${workspaceHub.name}"></p>
-          <p th:text="${workspaceHub.description}"></p>
-          <!-- <p th:text="${workspaceHub.features}"></p> -->
-          <p th:text="${workspaceHub.hours.hoursTitle}"></p>
-          <p th:text="${workspaceHub.parking.parkingTitle}"></p>
-          <p th:text="${workspaceHub.cost.costTitle}"></p>
-          <p th:text="${workspaceHub.capacity.capacityTitle}"></p>
-				</div>  
-  </div>
+  <div class="container">
+    <header>
+      <img src="images/Logo.png" alt="logo" class="logo-image" />
+
+    </header>
+    <nav>
+      <p>Home</p>
+      <p>Categories</p>
+      <p>About Us</p>
+    </nav>
+
+    <div class="card-sections">
+
+    <div class="workspace-card">
+      <h2 th:text="${spaceType.spaceTitle}"></h2>
+      <div class="workspace-card" th:each="workspaceHub: ${spaceType.workspaceHubs}">
+        <h3 class="card-name" th:text="${workspaceHub.name}"></h3>
+        <img class="card-image" th:src="${workspaceHub.imageUrl}" alt="Picture of Work Space"/>
+					
+
+
+  
+
+        <p class="card-address" th:text="'Address: ' + ${workspaceHub.address}"></p>
+        <p class="card-website" th:text="${workspaceHub.website}"></p>
+        <p class="card-hours" th:text="'Hours: ' + ${workspaceHub.hours.hoursTitle}"></p>
+        <p class="card-parking" th:text="'Parking: ' + ${workspaceHub.parking.parkingTitle}"></p>
+        <p class="card-cost" th:text="'Cost: ' + ${workspaceHub.cost.costTitle}"></p>
+        <p class="card-capacity" th:text="'Capacity: ' + ${workspaceHub.capacity.capacityTitle}"></p>
+      </div>
+    </div>
+
+
+
+
+    
+
+
+    <footer>
+  		<p>Copyright 2017</p>
+  		<div class="contact-stuff">
+  		<!-- 	<a href=""><img src="" alt="facebook"></a>
+  			<a href=""><img src="" alt="twitter"></a>
+  			<a href=""><img src="" alt="email"></a> -->
+  		</div>
+  	</footer>
+
 </body>
+
 </html>
