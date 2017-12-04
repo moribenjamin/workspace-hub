@@ -15,14 +15,16 @@ public class SpaceType {
 	private Long spaceTypeId;
 
 	private String spaceTitle;
+	private String spaceImageUrl;
 	
 	@OneToMany(mappedBy = "spaceType")
 	private Set<WorkspaceHub> workspaceHubs;
 	
 	protected SpaceType() {}
 	
-	public SpaceType (String spaceTitle) {
+	public SpaceType (String spaceTitle, String spaceImageUrl) {
 		this.spaceTitle = spaceTitle;
+		this.spaceImageUrl = spaceImageUrl;
 	}
 
 	public Long getSpaceTypeId() {
@@ -32,6 +34,9 @@ public class SpaceType {
 	public String getSpaceTitle() {
 		return spaceTitle;
 	}
+	public String getSpaceImageUrl() {
+		return spaceImageUrl;
+	}
 
 	public Set<WorkspaceHub> getWorkspaceHubs() {
 		return workspaceHubs;
@@ -39,6 +44,6 @@ public class SpaceType {
 
 	@Override
 	public String toString() {
-		return String.format("SpaceType[spaceTitle='%s']", spaceTitle);
+		return String.format("SpaceType[spaceTitle='%s', spaceImageUrl='%s', workspaceHubs='%s']", spaceTitle, spaceImageUrl, workspaceHubs);
 	}
 }
