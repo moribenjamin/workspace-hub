@@ -108,15 +108,19 @@
         <p>Categories</p>
         <p>About Us</p>
     </nav>
-    <main>
       <div class="home-images">
+      <div class="spacetype-image">
         <div th:each="spaceType: ${spaceTypes}">
-    		  <a th:href="@{/spaceType(id=${spaceType.spaceTypeId})}" th:text="${spaceType.spaceTitle}">
-    		    <img class="spacetype-image" th:src="${spaceType.spaceImageUrl}" alt="Picture of type of workspace"/>
+    		  <a th:href="@{/spaceType(id=${spaceType.spaceTypeId})}">
+    		    <img th:src="${spaceType.spaceImageUrl}" alt="Picture of type of workspace"/>
     		  </a>
         </div>
+      </div>
+        <div class="nearme-icon">
+    <img src="images/nearme.png"></img>
+        </div>
     	</div>
-    </main>
+    
   	<footer>
   		<div class="contact-stuff">
   			<a href="www.facebook.com"><img src="images/facebook.png" alt="facebook"/></a>
@@ -128,7 +132,7 @@
   </div>
 
 
-    <div class="container">
+    <!-- <div class="container">
       <div class="options-box">
         <h1>Find Workspace Hub</h1>
         <div>
@@ -151,7 +155,7 @@
     <script async = "async" defer = "defer"
       src=
       "https://maps.googleapis.com/maps/api/js?libraries=geometry,drawing&amp;key=AIzaSyA1ZAXALsZD-NjPQfwCZrFZpioD7ARiXIs&amp;v=3&amp;callback=initMap">
-  </script>
+  </script> -->
 
 
 

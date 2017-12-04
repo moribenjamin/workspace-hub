@@ -1,3 +1,15 @@
- header{
-  background-color: gray;
+ header, footer {
+  background-color: #7C92E4;
 }
+
+nav {
+	background-color: #CCCCCC;
+	color: white;
+	border: black 2px solid;
+}
+
+.home-images img {
+	width: 600px;
+	height: 100%;
+}
+
