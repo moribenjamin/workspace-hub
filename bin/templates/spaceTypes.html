@@ -10,100 +10,16 @@
   <link rel="stylesheet" type="text/css" href="css/style.css"/>
 
   <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet"/>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
   <link href="https://fonts.googleapis.com/css?family=Carme" rel="stylesheet"/>
-=======
-   <link href="https://fonts.googleapis.com/css?family=Carme" rel="stylesheet"/>
+
 
 
   <style>
-      html,
-      body {
-        font-family: Arial, sans-serif;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-
-      .container {
-        height: 100%;
-        position: relative;
-      }
-
-      input {
-        font-size: 12px;
-      }
-
-      h1 {
-        color: #525454;
-        font-size: 22px;
-        margin: 0 0 10px 0;
-        text-align: center;
-      }
-
-      #hide-listings,
-      #show-listings {
-        width: 48%;
-      }
-
-      hr {
-        background: #D0D7D9;
-        height: 1px;
-        margin: 20px 0 20px 0;
-        border: none;
-      }
-
-      #map {
-        bottom:0px;
-        height: 100%;
-        left: 362px;
-        position: absolute;
-        right: 0px;
-      }
-
-      .options-box {
-        background: #fff;
-        border: 1px solid #999;
-        border-radius: 3px;
-        height: 100%;
-        line-height: 35px;
-        padding: 10px 10px 30px 10px;
-        text-align: left;
-        width: 340px;
-      }
-
-      #pano {
-        width: 200px;
-        height: 200px;
-      }
-
-      .text {
-        font-size: 12px;
-      }
-
-      #toggle-drawing {
-        width: 27%;
-        position: relative;
-        margin-left: 10px;
-      }
-
-      #zoom-to-area-text {
-        position: relative;
-        width: 70%;
-      }
-
-      #zoom-to-area {
-        width: 24%;
-      }
+     
     </style>
-  
 
- 
->>>>>>> markers
-=======
-  <link href="https://fonts.googleapis.com/css?family=Carme" rel="stylesheet"/>
->>>>>>> upstream/master
+
 </head>
 <body>
   <div class="container">
@@ -118,7 +34,7 @@
     <main>
       <div class="home-images">
         <div th:each="spaceType: ${spaceTypes}">
-    		  <a th:href="@{/spaceType(id=${spaceType.spaceTypeId})}">
+    		  <a th:href="@{/spaceType(id=${spaceType.spaceTypeId})}" th:text="${spaceType.spaceTitle}">
     		    <img class="spacetype-image" th:src="${spaceType.spaceImageUrl}" alt="Picture of type of workspace"/>
     		  </a>
         </div>
@@ -133,7 +49,7 @@
   		</div>
   	</footer>
   </div>
-  
+
 
     <div class="container">
       <div class="options-box">
@@ -145,13 +61,13 @@
           <span class="text"> Draw a shape to search within it for homes!</span>
           <input id="toggle-drawing"  type="button" value="Drawing Tools"></input>
         </div>
-  
+
         <div>
           <input id="zoom-to-area-text" type="text" placeholder="Enter your favorite area!"></input>
           <input id="zoom-to-area" type="button" value="Zoom"></input>
         </div>
       </div>
-      <div id="map"></div>
+      <div id="map"></div> 
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="/js/script.js"></script>
@@ -159,8 +75,8 @@
       src=
       "https://maps.googleapis.com/maps/api/js?libraries=geometry,drawing&amp;key=AIzaSyA1ZAXALsZD-NjPQfwCZrFZpioD7ARiXIs&amp;v=3&amp;callback=initMap">
   </script>
-   
-   
- 
+
+
+
 </body>
 </html>
