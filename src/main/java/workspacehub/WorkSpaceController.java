@@ -5,13 +5,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-
 import org.springframework.web.bind.annotation.RequestParam;
-
-
-
-
 
 @Controller
 public class WorkSpaceController {
@@ -44,7 +38,6 @@ public class WorkSpaceController {
 
 		model.addAttribute("spaceType", spaceTypeRepo.findAll());
 
-
 		model.addAttribute("workspaceHubs", workspaceHubRepo.findAll());
 		model.addAttribute("parking", parkingRepo.findAll());
 		model.addAttribute("hours", hoursRepo.findAll());
@@ -54,28 +47,21 @@ public class WorkSpaceController {
 		return "splashPage";
 	}
 
-	@RequestMapping("/space_type")
-	public String getOneSpaceType1(@RequestParam Long id, Model model) {
-		model.addAttribute("spacetype", spaceTypeRepo.findOne(id));
-		return "spacetype";
-	}
-
-
 	@RequestMapping("/spaceTypes")
 	public String showAllSpaceTypes(Model model) {
 		model.addAttribute("spaceTypes", spaceTypeRepo.findAll());
 		return "spaceTypes";
 	}
 
-	
 	@RequestMapping("/spaceType")
 	public String getOneSpaceType(@RequestParam Long id, Model model) {
 		model.addAttribute("spaceType", spaceTypeRepo.findOne(id));
 		return "spaceType";
 	}
+
 	@RequestMapping("/locations")
-	public String getLocations () {
-	return "locations";
+	public String getLocations() {
+		return "locations";
 	}
 
 }

@@ -181,7 +181,7 @@
           }
         ];
 
-        // Constructor creates a new map - only center and zoom are required.
+<!--         // Constructor creates a new map - only center and zoom are required.
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 40.7413549, lng:  -82.9988},
           zoom: 13,
@@ -419,6 +419,31 @@
     </script> 
 
   <script async = "async" 
+      src=
+      "https://maps.googleapis.com/maps/api/js?libraries=geometry,drawing&amp;key=AIzaSyA1ZAXALsZD-NjPQfwCZrFZpioD7ARiXIs&amp;v=3&amp;callback=initMap">
+  </script> -->
+  
+  <div class="container">
+      <div class="options-box">
+        <h1>Find Workspace Hub</h1>
+        <div>
+          <input id="show-listings" type="button" value="Show Listings"></input>
+          <input id="hide-listings" type="button" value="Hide Listings"></input>
+          <hr></hr>
+          <span class="text"> Draw a shape to search within it for homes!</span>
+          <input id="toggle-drawing"  type="button" value="Drawing Tools"></input>
+        </div>
+
+        <div>
+          <input id="zoom-to-area-text" type="text" placeholder="Enter your favorite area!"></input>
+          <input id="zoom-to-area" type="button" value="Zoom"></input>
+        </div>
+      </div>
+      <div id="map"></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="/js/script.js"></script>
+    <script async = "async" defer = "defer"
       src=
       "https://maps.googleapis.com/maps/api/js?libraries=geometry,drawing&amp;key=AIzaSyA1ZAXALsZD-NjPQfwCZrFZpioD7ARiXIs&amp;v=3&amp;callback=initMap">
   </script>
