@@ -94,7 +94,7 @@ public class WorkSpacePopulator implements CommandLineRunner {
 						"email", "http://3820highstreet.spaces.nexudus.com/en",
 						"https://www.facebook.com/TheSaltMines/", "twitter.com/thesaltmines", "\"3820 N High Street, Columbus, OH, 43214\"",
 						"(614) 859-9559", "djskdkjsak", coworkingSpace, hours2, freeStreet, moderate, cap));
-		workspaceHubRepo.save(new WorkspaceHub("\"The Perch\"", "/images/workspace/perch/1.jpg\"",
+		workspaceHubRepo.save(new WorkspaceHub("\"The Perch\"", "/images/workspace/perch/1.jpg",
 				"work@theperchshortnorth.com", "theperchshortnorth.com", "https://www.facebook.com/theperchshortnorth/",
 				"twitter.com/coworkcolumbus", "\"45 E Lincoln St, Columbus, OH, 43215\"", "(614) 769-7131", "djskdkjsak",
 				coworkingSpace, hours3, onSite, moderate, cap));
@@ -130,12 +130,12 @@ public class WorkSpacePopulator implements CommandLineRunner {
 						"email", "https://otterbeinpoint.com/", "https://www.facebook.com/OtterbeinPoint/",
 						"twitter.com/otterbeinpoint", "\"60 Collegeview Rd, Westerville, OH, 43081\"", "(614) 823-1420",
 						"djskdkjsak", library, hours7, onSite, moderateHigh, cap));
-		workspaceHubRepo.save(new WorkspaceHub("\"Whetstone Library\"", "", "email", "http://www.columbuslibrary.org/",
+		workspaceHubRepo.save(new WorkspaceHub("\"Whetstone Library\"", "/images/library/whetstone/whetstoneinside.png", "email", "http://www.columbuslibrary.org/",
 				"https://www.facebook.com/Columbus-Metropolitan-Library-Whetstone-Branch-142655732432937/",
 				"twitter.com/columbuslibrary", "\"3909 N. High Street, Columbus, OH, 43214\"", "(614) 645-2275",
 				"djskdkjsak", library, hours6, onSite, free, cap));
 		workspaceHubRepo
-				.save(new WorkspaceHub("\"Columbus Metropolitan Library\"", "/images/library/whetstone/whetstoneinside.png",
+				.save(new WorkspaceHub("\"Columbus Metropolitan Library\"", "/images/library/columbus-metro/567246699_6f8b6db75d_b.jpg",
 						"email", "http://www.columbuslibrary.org/", "https://www.facebook.com/columbuslibrary/",
 						"twitter.com/columbuslibrary", "\"96 S. Grant Avenue, Columbus, OH, 43215\"", "(614) 645-2275",
 						"djskdkjsak", library, hours7, garage, free, cap));
