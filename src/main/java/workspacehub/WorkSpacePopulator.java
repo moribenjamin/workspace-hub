@@ -79,76 +79,76 @@ public class WorkSpacePopulator implements CommandLineRunner {
 		Capacity cap = new Capacity("100");
 		capacityRepo.save(cap);
 
-		workspaceHubRepo.save(new WorkspaceHub("Serendipity Labs",
+		workspaceHubRepo.save(new WorkspaceHub("\"Serendipity Labs\"",
 				"/images/workspace/serendipity-labs/serendipityinside.jpg", "info@csuitesoffices.com",
 				"http://serendipitylabs.com", "https://www.facebook.com/SerendipityLabsColumbus/",
-				"twitter.com/columbusohlabs", "21 E State St, Columbus, OH 43215", "(614) 705-2212", "djskdkjsak",
+				"twitter.com/columbusohlabs", "\"21 E State St, Columbus, OH, 43215\"", "(614) 705-2212", "djskdkjsak",
 				coworkingSpace, hours1, garage, expensive, cap));
 		workspaceHubRepo.save(
-				new WorkspaceHub("Saltmines South", "/images/workspace/saltmines-south/saltmines-south-inside.png",
+				new WorkspaceHub("\"Saltmines South\"", "/images/workspace/saltmines-south/saltmines-south-inside.png",
 						"email", "http://2997indianola.spaces.nexudus.com/en", "https://www.facebook.com/TheSaltMines/",
-						"twitter.com/thesaltmines", "2997 Indianola", "(614) 859-9559", "djskdkjsak", coworkingSpace,
+						"twitter.com/thesaltmines", "\"2997 Indianola, Columbus, OH, 43202\"", "(614) 859-9559", "djskdkjsak", coworkingSpace,
 						hours2, freeStreet, moderate, cap));
 		workspaceHubRepo.save(
-				new WorkspaceHub("Saltmines North", "/images/workspace/saltmines-north/saltmines-north-inside.png",
+				new WorkspaceHub("\"Saltmines North\"", "/images/workspace/saltmines-north/saltmines-north-inside.png",
 						"email", "http://3820highstreet.spaces.nexudus.com/en",
-						"https://www.facebook.com/TheSaltMines/", "twitter.com/thesaltmines", "3820 N High Street",
+						"https://www.facebook.com/TheSaltMines/", "twitter.com/thesaltmines", "\"3820 N High Street, Columbus, OH, 43214\"",
 						"(614) 859-9559", "djskdkjsak", coworkingSpace, hours2, freeStreet, moderate, cap));
-		workspaceHubRepo.save(new WorkspaceHub("The Perch", "/images/workspace/perch/1.jpg",
+		workspaceHubRepo.save(new WorkspaceHub("\"The Perch\"", "/images/workspace/perch/1.jpg\"",
 				"work@theperchshortnorth.com", "theperchshortnorth.com", "https://www.facebook.com/theperchshortnorth/",
-				"twitter.com/coworkcolumbus", "45 E Lincoln St, Columbus, OH 43215", "(614) 769-7131", "djskdkjsak",
+				"twitter.com/coworkcolumbus", "\"45 E Lincoln St, Columbus, OH, 43215\"", "(614) 769-7131", "djskdkjsak",
 				coworkingSpace, hours3, onSite, moderate, cap));
-		workspaceHubRepo.save(new WorkspaceHub("The Hub on Kenney", "/images/workspace/hub/hubinside.jpg", "email",
+		workspaceHubRepo.save(new WorkspaceHub("\"The Hub on Kenney\"", "/images/workspace/hub/hubinside.jpg", "email",
 				"thehubonkenny.com", "https://www.facebook.com/thehubonkenny/", "twitter.com/thehubonkenny",
-				"4510 Kenny Rd, Columbus, OH 43220", "(614) 845-5001", "djskdkjsak", coworkingSpace, hours4, onSite,
+				"\"4510 Kenny Rd, Columbus, OH, 43220\"", "(614) 845-5001", "djskdkjsak", coworkingSpace, hours4, onSite,
 				moderate, cap));
-		workspaceHubRepo.save(new WorkspaceHub("Cup O Joe Coffee House", "/images/coffee/cup-o-joe/cupojoeinside.jpg",
+		workspaceHubRepo.save(new WorkspaceHub("\"Cup O Joe Coffee House\"", "/images/coffee/cup-o-joe/cupojoeinside.jpg",
 				"email", "http://www.cupojoe.com/", "https://www.facebook.com/cupojoecoffee/",
-				"twitter.com/cupojoecoffee ", "2990 N High St, Columbus, OH 43202", "(614) 225-1563", "djskdkjsak",
+				"twitter.com/cupojoecoffee ", "\"2990 N High St, Columbus, OH, 43202\"", "(614) 225-1563", "djskdkjsak",
 				coffeeShop, hours5, onSite, coffee, cap));
-		workspaceHubRepo.save(new WorkspaceHub("Starbucks Clintonville", "images/coffee/starbucks/starbucksinside.jpg",
+		workspaceHubRepo.save(new WorkspaceHub("\"Starbucks Clintonville\"", "images/coffee/starbucks/starbucksinside.jpg",
 				"email",
 				"https://www.starbucks.com/store-locator/store/1011597/north-high-and-east-torrence-3580-north-high-street-columbus-oh-43214-us",
-				"https://www.facebook.com/Starbucks/", "twitter.com/starbucks", "3580 N High St, Columbus, OH 43214",
+				"https://www.facebook.com/Starbucks/", "twitter.com/starbucks", "\"3580 N High St, Columbus, OH ,43214\"",
 				"(614) 263-1292", "djskdkjsak", coffeeShop, hours8, onSite, coffee, cap));
 		workspaceHubRepo.save(
-				new WorkspaceHub("Crimson Cup Clintonville", "/images/coffee/crimson-cup/crimsoninside.jpg", "email",
+				new WorkspaceHub("\"Crimson Cup Clintonville\"", "/images/coffee/crimson-cup/crimsoninside.jpg", "email",
 						"https://www.crimsoncup.com/about/clintonville", "https://www.facebook.com/crimsoncup/",
-						"twitter.com/crimsoncup", "4541 N High St, Columbus, OH 43214", "(614) 262-6212", "djskdkjsak",
+						"twitter.com/crimsoncup", "\"4541 N High St, Columbus, OH, 43214\"", "(614) 262-6212", "djskdkjsak",
 						coffeeShop, hours9, onSite, coffee, cap));
 		workspaceHubRepo
-				.save(new WorkspaceHub("Giant Eagle Market District", "/images/coffee/giant-eagle/gianteagleinside.jpg",
+				.save(new WorkspaceHub("\"Giant Eagle Market District\"", "/images/coffee/giant-eagle/gianteagleinside.jpg",
 						"email", "https://www.marketdistrict.com/", "https://www.facebook.com/marketdistrict/",
-						"twitter.com/marketdistrict", "840 W 3rd Ave, Columbus, OH 43212", "(614) 294-2186",
+						"twitter.com/marketdistrict", "\"840 W 3rd Ave, Columbus, OH, 43212\"", "(614) 294-2186",
 						"djskdkjsak", coffeeShop, hours10, onSite, coffee, cap));
-		workspaceHubRepo.save(new WorkspaceHub("Mission Coffee", "/images/coffee/mission-coffee/missioninside.jpg",
+		workspaceHubRepo.save(new WorkspaceHub("\"Mission Coffee\"", "/images/coffee/mission-coffee/missioninside.jpg",
 				"email", "https://www.missioncoffeeco.com/", "https://www.facebook.com/missioncoffeeco/",
-				"twitter.com/missioncolumbus", "11 Price Ave, Columbus, OH 43201", "(614) 300-0648", "djskdkjsak",
+				"twitter.com/missioncolumbus", "\"11 Price Ave, Columbus, OH, 43201\"", "(614) 300-0648", "djskdkjsak",
 				coffeeShop, hours2, freeStreet, coffee, cap));
 		workspaceHubRepo
-				.save(new WorkspaceHub("The Point-Otterbein University", "/images/library/the-point/point_inside-4.jpg",
+				.save(new WorkspaceHub("\"The Point-Otterbein University\"", "/images/library/the-point/point_inside-4.jpg",
 						"email", "https://otterbeinpoint.com/", "https://www.facebook.com/OtterbeinPoint/",
-						"twitter.com/otterbeinpoint", "60 Collegeview Rd, Westerville, OH 43081", "(614) 823-1420",
+						"twitter.com/otterbeinpoint", "\"60 Collegeview Rd, Westerville, OH, 43081\"", "(614) 823-1420",
 						"djskdkjsak", library, hours7, onSite, moderateHigh, cap));
-		workspaceHubRepo.save(new WorkspaceHub("Whetstone Library", "", "email", "http://www.columbuslibrary.org/",
+		workspaceHubRepo.save(new WorkspaceHub("\"Whetstone Library\"", "", "email", "http://www.columbuslibrary.org/",
 				"https://www.facebook.com/Columbus-Metropolitan-Library-Whetstone-Branch-142655732432937/",
-				"twitter.com/columbuslibrary", "3909 N. High Street, Columbus, OH 43214", "(614) 645-2275",
+				"twitter.com/columbuslibrary", "\"3909 N. High Street, Columbus, OH, 43214\"", "(614) 645-2275",
 				"djskdkjsak", library, hours6, onSite, free, cap));
 		workspaceHubRepo
-				.save(new WorkspaceHub("Columbus Metropolitan Library", "/images/library/whetstone/whetstoneinside.png",
+				.save(new WorkspaceHub("\"Columbus Metropolitan Library\"", "/images/library/whetstone/whetstoneinside.png",
 						"email", "http://www.columbuslibrary.org/", "https://www.facebook.com/columbuslibrary/",
-						"twitter.com/columbuslibrary", "96 S. Grant Avenue, Columbus, OH 43215", "(614) 645-2275",
+						"twitter.com/columbuslibrary", "\"96 S. Grant Avenue, Columbus, OH, 43215\"", "(614) 645-2275",
 						"djskdkjsak", library, hours7, garage, free, cap));
-		workspaceHubRepo.save(new WorkspaceHub("Northside Branch-Columbus Library",
+		workspaceHubRepo.save(new WorkspaceHub("\"Northside Branch-Columbus Library\"",
 				"/images/library/northside-branch/northside branch library meeting rooom.jpg", "email",
 				"http://www.columbuslibrary.org/",
 				"https://www.facebook.com/Columbus-Metropolitan-Library-Northside-Branch-111841245519790/",
-				"twitter.com/columbuslibrary", "1423 N High St, Columbus, OH 43201", "(614) 645-2275", "djskdkjsak",
+				"twitter.com/columbuslibrary", "\"1423 N High St, Columbus, OH, 43201\"", "(614) 645-2275", "djskdkjsak",
 				library, hours7, freeStreet, free, cap));
-		workspaceHubRepo.save(new WorkspaceHub("Worthington Library",
+		workspaceHubRepo.save(new WorkspaceHub("\"Worthington Library\"",
 				"/images/library/worthington/Worthington_meeting_rooms.jpg", "email", "worthingtonlibraries.org",
 				"https://www.facebook.com/Worthington-Library-10150095364585704/", "twitter.com/worthingtonlib",
-				"820 High Street, Worthington, OH 43085", "614-807-2626", "djskdkjsak", library, hours7, onSite, free,
+				"\"820 High Street, Worthington, OH, 43085\"", "614-807-2626", "djskdkjsak", library, hours7, onSite, free,
 				cap));
 
 		// fetch customers by last name

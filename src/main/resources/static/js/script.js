@@ -11,8 +11,13 @@
 // function store_locations(lat, lng) {
 // 	// used to show markers
 
+<<<<<<< HEAD
+	/*locations = [ new google.maps.LatLng(lat, lng) ];*/
+}
+=======
 // 	locations = [ new google.maps.LatLng(lat, lng) ];
 // }
+>>>>>>> master
 
 // function initMap() {
 // 	// Create a styles array to use with the map.
@@ -86,6 +91,41 @@
 // 		} ]
 // 	} ];
 
+<<<<<<< HEAD
+	// Constructor creates a new map - only center and zoom are required.
+	map = new google.maps.Map(document.getElementById('map'), {
+		center : {
+			lat : 40.7413549,
+			lng : -82.9988
+		},
+		zoom : 13,
+		styles : styles,
+		mapTypeControl : false
+	});
+/*	$.ajax({
+		type : 'GET',
+		datatype : 'json',
+		url : './js/addresses.json',
+		success : function(locationList) {
+			var infoLength = locationList.addresses.length;
+			console.log("locationList: " + locationList);
+			for (var i = 0; i < infoLength; i++) {
+				var location = new google.maps.LatLng(
+						locationList.addresses[i].lat,
+						locationList.addresses[i].lng);
+				locations.push(location);
+				console.log("location: " + location);
+				var position = location;
+				var name = locationList.addresses[i].name;
+				// Create a marker per location, and put into markers array.
+				var marker = new google.maps.Marker({
+					position : position,
+					name : name,
+					animation : google.maps.Animation.DROP,
+					icon : defaultIcon,
+					id : i
+				});
+=======
 // 	// Constructor creates a new map - only center and zoom are required.
 // 	map = new google.maps.Map(document.getElementById('map'), {
 // 		center : {
@@ -119,6 +159,7 @@
 // 					icon : defaultIcon,
 // 					id : i
 // 				});
+>>>>>>> master
 
 // 				markers.push(marker);
 // 			}
@@ -126,8 +167,13 @@
 // 			console.log(markers);
 // 			// console.log(locationList)
 
+<<<<<<< HEAD
+		}
+	});*/
+=======
 // 		}
 // 	});
+>>>>>>> master
 
 // 	// These are the real estate listings that will be shown to the user.
 // 	// Normally we'd have these in a database instead.
@@ -221,6 +267,60 @@
 // 	});
 // }
 
+<<<<<<< HEAD
+// This function takes the input value in the find nearby area text input
+// locates it, and then zooms into that area. This is so that the user can
+// show all listings, then decide to focus on one area of the map.
+function zoomToArea() {
+	// Initialize the geocoder.
+	var geocoder = new google.maps.Geocoder();
+	// Get the address or place that the user entered.
+	
+	
+	console.log(address);
+	// Make sure the address isn't blank.
+	if (address == '') {
+		window.alert('You must enter an area, or address.');
+	} else {
+		// Geocode the address/area entered to get the center. Then, center the
+		// map
+		// on it and zoom in
+		geocoder
+				.geocode(
+						{
+							address : address,
+							componentRestrictions : {
+								locality : 'Columbus'
+							}
+						},
+						function(results, status) {
+							if (status == google.maps.GeocoderStatus.OK) {
+								locations.push(results.location);
+
+								var position = results.location;
+								
+								// Create a marker per location, and put into markers array.
+								var marker = new google.maps.Marker({
+									position : position,
+									name : name,
+									animation : google.maps.Animation.DROP,
+									icon : defaultIcon,
+									id : i
+								});
+
+								markers.push(marker);
+							}
+								
+							} else {
+								window
+										.alert('We could not find that location - try entering a more'
+												+ ' specific place.');
+							}
+						});
+	}
+
+}
+=======
 // // This function takes the input value in the find nearby area text input
 // // locates it, and then zooms into that area. This is so that the user can
 // // show all listings, then decide to focus on one area of the map.
@@ -256,6 +356,7 @@
 // 						});
 // 	}
 // }
+>>>>>>> master
 
 // // This function populates the infowindow when the marker is clicked. We'll only
 // // allow
@@ -417,6 +518,11 @@ for (var i = 0; i < img.length; i++) {
     // captionText.innerHTML = this.alt;
   });
 
+<<<<<<< HEAD
+// This function takes the input value in the find nearby area text input
+// locates it, and then zooms into that area. This is so that the user can
+//*/ show all listings, then decide to focus on one area of the map.
+=======
 }
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
@@ -425,3 +531,4 @@ var span = document.getElementsByClassName("close")[0];
 span.onclick = function() {
   modal.style.display = "none";
 };
+>>>>>>> master
