@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Workspace Hub -- Spacetype</title>
+<link href="https://fonts.googleapis.com/css?family=Carme"
+	rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="css/layout.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+
+
+	<header>
+		<img src="images/Logo.png" alt="logo" class="logo-image" />
+
+	</header>
+	<nav class="space">
+		<p>Home</p>
+		<p>Categories</p>
+    <p>Locations</p>
+		<p>About Us</p>
+	</nav>
+	<div class="container_location">
+
+
+
+			<div class="location-info">
+
+				<h3 class="location-name" th:text="${location.name}"></h3>
+				<img class="location-image" th:src="${location.imageUrl}"
+					alt="Picture of Work Space" />
+				<p class="location-address"
+					th:text="'Address: ' + ${location.address}"></p>
+				<p class="location-website" th:text="${location.website}"></p>
+				<p class="location-hours"
+					th:text="'Hours: ' + ${location.hours.hoursTitle}"></p>
+				<p class="location-parking"
+					th:text="'Parking: ' + ${location.parking.parkingTitle}"></p>
+				<p class="location-cost"
+					th:text="'Cost: ' + ${location.cost.costTitle}"></p>
+				<p class="location-capacity"
+					th:text="'Capacity: ' + ${location.capacity.capacityTitle}"></p>
+				<p class="street_view">GOOGLE STREET VIEW</p>
+			</div>
+
+
+
+	</div>
+	<footer>
+		<p>Copyright 2017</p>
+		<div class="contact-stuff">
+			<a href="www.facebook.com"><img src="images/facebook.png"
+				alt="facebook" /></a> <a href="www.twitter.com"><img
+				src="images/twitter.png" alt="twitter" /></a> <a
+				href="mailto:email@email.com"><img src="images/email.jpg"
+				alt="email" /></a> <img src="images/copyright.png" alt="copyright" />
+		</div>
+	</footer>
+</body>
+
+</html>
