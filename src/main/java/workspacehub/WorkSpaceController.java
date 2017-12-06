@@ -56,17 +56,21 @@ public class WorkSpaceController {
 	@RequestMapping("/spaceType")
 	public String getOneSpaceType(@RequestParam Long id, Model model) {
 		model.addAttribute("spaceType", spaceTypeRepo.findOne(id));
+		model.addAttribute("spaceTypes", spaceTypeRepo.findAll());
 		return "spaceType";
 	}
 
 	@RequestMapping("/locations")
 	public String getLocations() {
+
 		return "locations";
 	}
+
 	@RequestMapping("/location")
 	public String getOneLocation(@RequestParam Long id, Model model) {
 		model.addAttribute("location", workspaceHubRepo.findOne(id));
+		model.addAttribute("spaceTypes", spaceTypeRepo.findAll());
 		return "location";
 
-}
+	}
 }

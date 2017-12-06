@@ -27,8 +27,15 @@
   	</header>
 
  <nav>
-        <p>Home</p>
-        <p>Categories</p>
+<a href="/spaceTypes">Home</a>
+<div class="dropdown">
+   <button class="dropbtn">Categories
+     <i class="fa fa-caret-down"></i>
+   </button>
+   <div class="dropdown-content">
+          <a th:each="spaceType: ${spaceTypes}" th:text="${spaceType.spaceTitle}" th:href="@{/spaceType(id=${spaceType.spaceTypeId})}"></a>
+   </div>
+ </div>
         <p>About Us</p>
     </nav>
   <div class="container">
