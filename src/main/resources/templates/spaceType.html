@@ -30,7 +30,9 @@
 
 		<section class="card-sections">
 			<div class="workspace-card" th:each="workspaceHub: ${spaceType.workspaceHubs}">
-				<h3 class="card-name" th:text="${workspaceHub.name}"></h3>
+					<a th:href = "@{/location(id=${workspaceHub.id})}" th:text="${workspaceHub.name}">
+				<!-- <h3 class="card-name" th:text="${workspaceHub.name}"> </h3> -->
+				</a>
 				<img class="card-image" th:src="${workspaceHub.imageUrl}" alt="Picture of Work Space" />
 				<p class="card-address" th:text="'Address: ' + ${workspaceHub.address}"></p>
 				<p class="card-website" th:text="${workspaceHub.website}"></p>
