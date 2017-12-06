@@ -63,10 +63,11 @@ public class WorkSpaceController {
 	public String getLocations() {
 		return "locations";
 	}
+
 	@RequestMapping("/location")
 	public String getOneLocation(@RequestParam Long id, Model model) {
 		model.addAttribute("location", workspaceHubRepo.findOne(id));
 		return "location";
 
-}
+	}
 }
