@@ -2,11 +2,15 @@ package workspacehub;
 
 import javax.annotation.Resource;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
 public class WorkSpacePopulator implements CommandLineRunner {
+
+	private Logger log = LoggerFactory.getLogger(WorkSpacePopulator.class);
 
 	@Resource
 	private WorkSpaceHubRepository workspaceHubRepo;
@@ -147,6 +151,127 @@ public class WorkSpacePopulator implements CommandLineRunner {
 				"\"820 High Street, Worthington, OH, 43085\"", "614-807-2626", "djskdkjsak", library, hours7, onSite, free,
 				cap));
 
-	}
+		// fetch customers by last name
+		log.info("Parking Garage");
+		log.info("--------------------------------------------");
+		for (WorkspaceHub workspacehub : workspaceHubRepo.findByParking(garage)) {
+			log.info(workspacehub.toString());
+		}
+		log.info("");
 
+		log.info("Free Street Parking");
+		log.info("--------------------------------------------");
+		for (WorkspaceHub workspacehub : workspaceHubRepo.findByParking(freeStreet)) {
+			log.info(workspacehub.toString());
+		}
+		log.info("");
+
+		log.info("On-site");
+		log.info("--------------------------------------------");
+		for (WorkspaceHub workspacehub : workspaceHubRepo.findByParking(onSite)) {
+			log.info(workspacehub.toString());
+		}
+		log.info("");
+
+		log.info("Free Workspace");
+		log.info("--------------------------------------------");
+		for (WorkspaceHub workspacehub : workspaceHubRepo.findByCost(free)) {
+			log.info(workspacehub.toString());
+		}
+		log.info("");
+
+		log.info("Expensively Priced Workspace");
+		log.info("--------------------------------------------");
+		for (WorkspaceHub workspacehub : workspaceHubRepo.findByCost(expensive)) {
+			log.info(workspacehub.toString());
+		}
+		log.info("");
+
+		log.info("Moderately Priced Workspace");
+		log.info("--------------------------------------------");
+		for (WorkspaceHub workspacehub : workspaceHubRepo.findByCost(moderate)) {
+			log.info(workspacehub.toString());
+		}
+		log.info("");
+
+		log.info("Moderately High-Priced Workspace");
+		log.info("--------------------------------------------");
+		for (WorkspaceHub workspacehub : workspaceHubRepo.findByCost(moderateHigh)) {
+			log.info(workspacehub.toString());
+		}
+		log.info("");
+
+		log.info("Coffee Purchased Necessary");
+		log.info("--------------------------------------------");
+		for (WorkspaceHub workspacehub : workspaceHubRepo.findByCost(coffee)) {
+			log.info(workspacehub.toString());
+		}
+		log.info("");
+
+		log.info("Free Workspaces with Garages");
+		log.info("--------------------------------------------");
+		for (WorkspaceHub workspacehub : workspaceHubRepo.findByCostAndParking(free, garage)) {
+			log.info(workspacehub.toString());
+		}
+		log.info("");
+
+		log.info("Free Workspaces with Parking Lots");
+		log.info("--------------------------------------------");
+		for (WorkspaceHub workspacehub : workspaceHubRepo.findByCostAndParking(free, onSite)) {
+			log.info(workspacehub.toString());
+		}
+		log.info("");
+
+		log.info("Free Workspaces with Street Parking");
+		log.info("--------------------------------------------");
+		for (WorkspaceHub workspacehub : workspaceHubRepo.findByCostAndParking(free, freeStreet)) {
+			log.info(workspacehub.toString());
+		}
+		log.info("");
+
+		log.info("Expensive Workspaces with Garages");
+		log.info("--------------------------------------------");
+		for (WorkspaceHub workspacehub : workspaceHubRepo.findByCostAndParking(expensive, garage)) {
+			log.info(workspacehub.toString());
+		}
+		log.info("");
+
+		log.info("Moderately Priced Workspaces with Street Parking");
+		log.info("--------------------------------------------");
+		for (WorkspaceHub workspacehub : workspaceHubRepo.findByCostAndParking(moderate, freeStreet)) {
+			log.info(workspacehub.toString());
+		}
+
+		log.info("");
+
+		log.info("Moderately Priced Workspaces with Parking Lot");
+		log.info("--------------------------------------------");
+		for (WorkspaceHub workspacehub : workspaceHubRepo.findByCostAndParking(moderate, onSite)) {
+			log.info(workspacehub.toString());
+		}
+
+		log.info("");
+
+		log.info("Moderately High-Priced Workspaces with Parking Lot");
+		log.info("--------------------------------------------");
+		for (WorkspaceHub workspacehub : workspaceHubRepo.findByCostAndParking(moderateHigh, onSite)) {
+			log.info(workspacehub.toString());
+		}
+
+		log.info("");
+
+		log.info("Coffee Purchased Necessary and Parking Lot");
+		log.info("--------------------------------------------");
+		for (WorkspaceHub workspacehub : workspaceHubRepo.findByCostAndParking(coffee, onSite)) {
+			log.info(workspacehub.toString());
+		}
+
+		log.info("");
+
+		log.info("Coffee Purchased Necessary and Street Parking");
+		log.info("--------------------------------------------");
+		for (WorkspaceHub workspacehub : workspaceHubRepo.findByCostAndParking(coffee, freeStreet)) {
+			log.info(workspacehub.toString());
+		}
+	}
 }

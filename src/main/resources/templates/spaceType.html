@@ -2,15 +2,14 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-<title>Workspace Hub -- Spacetype</title>
-<link href="https://fonts.googleapis.com/css?family=Carme"
-	rel="stylesheet" />
-<link rel="stylesheet" type="text/css" href="css/normalize.css" />
-<link rel="stylesheet" type="text/css" href="css/layout.css" />
-<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Workspace Hub -- Spacetype</title>
+	<link href="https://fonts.googleapis.com/css?family=Carme" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/layout.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 
 <body>
@@ -30,23 +29,29 @@
 
 
 		<section class="card-sections">
-			<div class="workspace-card"
-				th:each="workspaceHub: ${spaceType.workspaceHubs}">
-				<h3 class="card-name" th:text="${workspaceHub.name}"></h3>
-				<img class="card-image" th:src="${workspaceHub.imageUrl}"
-					alt="Picture of Work Space" />
-				<p class="card-address"
-					th:text="'Address: ' + ${workspaceHub.address}"></p>
+			<div class="workspace-card" th:each="workspaceHub: ${spaceType.workspaceHubs}">
+					<a th:href = "@{/location(id=${workspaceHub.id})}" th:text="${workspaceHub.name}">
+				<!-- <h3 class="card-name" th:text="${workspaceHub.name}"> </h3> -->
+				</a>
+				<img class="card-image" th:src="${workspaceHub.imageUrl}" alt="Picture of Work Space" />
+				<p class="card-address" th:text="'Address: ' + ${workspaceHub.address}"></p>
 				<p class="card-website" th:text="${workspaceHub.website}"></p>
-				<p class="card-hours"
-					th:text="'Hours: ' + ${workspaceHub.hours.hoursTitle}"></p>
-				<p class="card-parking"
-					th:text="'Parking: ' + ${workspaceHub.parking.parkingTitle}"></p>
-				<p class="card-cost"
-					th:text="'Cost: ' + ${workspaceHub.cost.costTitle}"></p>
-				<p class="card-capacity"
-					th:text="'Capacity: ' + ${workspaceHub.capacity.capacityTitle}"></p>
+				<p class="card-hours" th:text="'Hours: ' + ${workspaceHub.hours.hoursTitle}"></p>
+				<p class="card-parking" th:text="'Parking: ' + ${workspaceHub.parking.parkingTitle}"></p>
+				<p class="card-cost" th:text="'Cost: ' + ${workspaceHub.cost.costTitle}"></p>
+				<p class="card-capacity" th:text="'Capacity: ' + ${workspaceHub.capacity.capacityTitle}"></p>
 				<p class="street_view">GOOGLE STREET VIEW</p>
+
+				<div id="myModal" class="modal">
+
+
+					<div class="modal-content">
+						<span class="close">&times;</span>
+						<img class="modal-image" th:src="${workspaceHub.imageUrl}" alt="Picture of Work Space" />
+					</div>
+
+				</div>
+
 			</div>
 		</section>
 		<section class="filter">filter stuff</section>
@@ -57,11 +62,11 @@
 		<div class="contact-stuff">
 			<a href="www.facebook.com"><img src="images/facebook.png"
 				alt="facebook" /></a> <a href="www.twitter.com"><img
-				src="images/twitter.png" alt="twitter" /></a> <a
-				href="mailto:email@email.com"><img src="images/email.jpg"
+				src="images/twitter.png" alt="twitter" /></a> <a href="mailto:email@email.com"><img src="images/email.jpg"
 				alt="email" /></a> <img src="images/copyright.png" alt="copyright" />
 		</div>
 	</footer>
 </body>
+<script src="js/script.js"></script>
 
 </html>
