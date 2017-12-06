@@ -11,7 +11,7 @@ var locations = [];
 function store_locations(lat, lng) {
 	// used to show markers
 
-	locations = [ new google.maps.LatLng(lat, lng) ];
+	/*locations = [ new google.maps.LatLng(lat, lng) ];*/
 }
 
 function initMap() {
@@ -96,7 +96,7 @@ function initMap() {
 		styles : styles,
 		mapTypeControl : false
 	});
-	$.ajax({
+/*	$.ajax({
 		type : 'GET',
 		datatype : 'json',
 		url : './js/addresses.json',
@@ -127,7 +127,7 @@ function initMap() {
 			// console.log(locationList)
 
 		}
-	});
+	});*/
 
 	// These are the real estate listings that will be shown to the user.
 	// Normally we'd have these in a database instead.
@@ -228,7 +228,9 @@ function zoomToArea() {
 	// Initialize the geocoder.
 	var geocoder = new google.maps.Geocoder();
 	// Get the address or place that the user entered.
-	var address = document.getElementById('zoom-to-area-text').value;
+	
+	
+	console.log(address);
 	// Make sure the address isn't blank.
 	if (address == '') {
 		window.alert('You must enter an area, or address.');
@@ -246,8 +248,22 @@ function zoomToArea() {
 						},
 						function(results, status) {
 							if (status == google.maps.GeocoderStatus.OK) {
-								map.setCenter(results[0].geometry.location);
-								map.setZoom(15);
+								locations.push(results.location);
+
+								var position = results.location;
+								
+								// Create a marker per location, and put into markers array.
+								var marker = new google.maps.Marker({
+									position : position,
+									name : name,
+									animation : google.maps.Animation.DROP,
+									icon : defaultIcon,
+									id : i
+								});
+
+								markers.push(marker);
+							}
+								
 							} else {
 								window
 										.alert('We could not find that location - try entering a more'
@@ -255,6 +271,7 @@ function zoomToArea() {
 							}
 						});
 	}
+
 }
 
 // This function populates the infowindow when the marker is clicked. We'll only
@@ -367,36 +384,4 @@ function searchWithinPolygon() {
 
 // This function takes the input value in the find nearby area text input
 // locates it, and then zooms into that area. This is so that the user can
-// show all listings, then decide to focus on one area of the map.
-function zoomToArea() {
-	// Initialize the geocoder.
-	var geocoder = new google.maps.Geocoder();
-	// Get the address or place that the user entered.
-	var address = document.getElementById('zoom-to-area-text').value;
-	// Make sure the address isn't blank.
-	if (address == '') {
-		window.alert('You must enter an area, or address.');
-	} else {
-		// Geocode the address/area entered to get the center. Then, center the
-		// map
-		// on it and zoom in
-		geocoder
-				.geocode(
-						{
-							address : address,
-							componentRestrictions : {
-								locality : 'Columbus'
-							}
-						},
-						function(results, status) {
-							if (status == google.maps.GeocoderStatus.OK) {
-								map.setCenter(results[0].geometry.location);
-								map.setZoom(15);
-							} else {
-								window
-										.alert('We could not find that location - try entering a more'
-												+ ' specific place.');
-							}
-						});
-	}
-}
+//*/ show all listings, then decide to focus on one area of the map.
