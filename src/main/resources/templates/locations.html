@@ -61,6 +61,7 @@
 
 	var address;
 	var name;
+	var idW;
 	
 	</script>
 	<script th:inline="javascript">
@@ -193,6 +194,7 @@
 		for (var i =0; i<data.length; i++) {
 			address = data[i].address;
 			name = data[i].name;
+			idW = data[i].id;
 		
 		/* console.log(address); */
 		// Make sure the address isn't blank.
@@ -227,13 +229,14 @@
 										name : name,
 										animation : google.maps.Animation.DROP,
 										icon : defaultIcon,
+										url : `location?id=${idW} `,
 										id: i
 									
 									});
 
 							 		markers.push(marker); 
 
-		marker.addListener('click', function() {
+		marker.addListener('mouseover', function() {
 			populateInfoWindow(this, largeInfowindow);
 		});
 		// Two event listeners - one for mouseover, one for mouseout,
@@ -244,6 +247,9 @@
 		marker.addListener('mouseout', function() {
 			this.setIcon(defaultIcon);
 		});
+		 google.maps.event.addListener(marker, 'click', function() {
+		        window.location.href = this.url;
+		    });
 							 		console.log(markers.length);
 							 		console.log(locations);
 								}
