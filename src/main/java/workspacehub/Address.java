@@ -14,10 +14,13 @@ public class Address {
 //	@GeneratedValue
 //	private Long addressId;
 //
+//	@Field(LOCATION_FIELD)
 //	private String addressTitle;
-////	@OneToOne(mappedBy = "address")
+//	
+//	@OneToOne(mappedBy = "address")
 //	private WorkspaceHub workspaceHubs;
 //	
+//	private Point point; 
 //	protected Address() { }
 //	
 //	public Address( String addressTitle) {
