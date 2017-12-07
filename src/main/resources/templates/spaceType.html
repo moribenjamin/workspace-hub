@@ -19,18 +19,19 @@
 		<img src="images/Logo.png" alt="logo" class="logo-image" />
 
 	</header>
-	<nav class="space">
-		<a href="/spaceTypes">Home</a>
-		<div class="dropdown">
-		<button class="dropbtn">Categories
-		<i class="fa fa-caret-down"></i>
-		</button>
-		<div class="dropdown-content">
-			<a th:each="spaceType: ${spaceTypes}" th:text="${spaceType.spaceTitle}" th:href="@{/spaceType(id=${spaceType.spaceTypeId})}"></a>
-		</div>
-		</div>
-		<p>About Us</p>
-	</nav>
+	<nav class = "navbar">
+ <a href="/spaceTypes">Home</a>
+ <div class="dropdown">
+    <button class="dropbtn">Categories
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+           <a th:each="spaceType: ${spaceTypes}" th:text="${spaceType.spaceTitle}" th:href="@{/spaceType(id=${spaceType.spaceTypeId})}"></a>
+    </div>
+  </div>
+  <a href="/locations.html">Locations</a>
+         <a href="/about-us.html">About Us</a>
+     </nav>
 	<h2 class="space-title" th:text="${spaceType.spaceTitle}"></h2>
 	<div class="container_space">
 
