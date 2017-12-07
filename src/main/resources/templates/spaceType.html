@@ -19,18 +19,19 @@
 		<img src="images/Logo.png" alt="logo" class="logo-image" />
 
 	</header>
-	<nav class="space">
-		<a href="/spaceTypes">Home</a>
-		<div class="dropdown">
-		<button class="dropbtn">Categories
-		<i class="fa fa-caret-down"></i>
-		</button>
-		<div class="dropdown-content">
-			<a th:each="spaceType: ${spaceTypes}" th:text="${spaceType.spaceTitle}" th:href="@{/spaceType(id=${spaceType.spaceTypeId})}"></a>
-		</div>
-		</div>
-		<p>About Us</p>
-	</nav>
+	<nav class = "navbar">
+ <a href="/spaceTypes">Home</a>
+ <div class="dropdown">
+    <button class="dropbtn">Categories
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+           <a th:each="spaceType: ${spaceTypes}" th:text="${spaceType.spaceTitle}" th:href="@{/spaceType(id=${spaceType.spaceTypeId})}"></a>
+    </div>
+  </div>
+  <a href="/locations.html">Locations</a>
+         <a href="/about-us.html">About Us</a>
+     </nav>
 	<h2 class="space-title" th:text="${spaceType.spaceTitle}"></h2>
 	<div class="container_space">
 
@@ -62,8 +63,52 @@
 
 			</div>
 		</section>
-		<section class="filter">filter stuff</section>
-
+		<section class="filter">Filters
+		<form method="POST">
+		<input name="id" type="hidden" th:value="parking" />
+		<button th:formaction="@{/parking?id=1}">Garage</button>
+		</form>
+		
+		<form method="POST">
+		<input name="id" type="hidden" th:value="parking" />
+		<button th:formaction="@{/parking?id=2}">Free Street Parking</button>
+		</form>
+		
+		<form method="POST">
+		<input name="id" type="hidden" th:value="parking" />
+		<button th:formaction="@{/parking?id=3}">Parking Lot</button>
+		</form>
+		
+		<form method="POST">
+		<input name="id" type="hidden" th:value="cost" />
+		<button th:formaction="@{/cost?id=1}">Free Entry</button>
+		</form>
+		
+		<form method="POST">
+		<input name="id" type="hidden" th:value="cost" />
+		<button th:formaction="@{/cost?id=3}">$</button>
+		</form>
+		
+		<form method="POST">
+		<input name="id" type="hidden" th:value="cost" />
+		<button th:formaction="@{/cost?id=4}">$$</button>
+		</form>
+		
+		<form method="POST">
+		<input name="id" type="hidden" th:value="cost" />
+		<button th:formaction="@{/cost?id=2}">$$$</button>
+		</form>
+		
+		<form method="POST">
+		<input name="id" type="hidden" th:value="cost" />
+		<button th:formaction="@{/cost?id=5}">Coffee for Entry</button>
+		</form>
+		
+		<form method="POST">
+		<input name="id" type="hidden" th:value="cost-parking" />
+		<button th:formaction="@{/cost-parking?cost-id=1&amp;parking-id=1}">Free with Garage</button>
+		</form>
+		</section>
 	</div>
 	<footer>
 		<p>Copyright 2017</p>

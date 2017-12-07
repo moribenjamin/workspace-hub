@@ -39,7 +39,7 @@
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 	</script>
 	<script async="async" defer="defer"
-		src="https://maps.googleapis.com/maps/api/js?libraries=geometry,drawing&amp;key=AIzaSyA1ZAXALsZD-NjPQfwCZrFZpioD7ARiXIs&amp;v=3&amp;callback=initMap">
+		src="https://maps.googleapis.com/maps/api/js?libraries=geometry,drawing&amp;key=AIzaSyCf73m4Z2aFWZnaHsFl4OUFoQgiTTsAZng&amp;v=3&amp;callback=initMap">
        </script>
 
 	<script>
@@ -61,6 +61,7 @@
 
 	var address;
 	var name;
+	var idW;
 	
 	</script>
 	<script th:inline="javascript">
@@ -68,7 +69,7 @@
 	</script>
 
 	<script th:each="workspaceHub:${workspaceHubs}" th:inline="javascript">
-	data.push({'address':[(${workspaceHub.address})], 'name':[(${workspaceHub.name})]});
+	data.push({'id': [(${workspaceHub.id})], 'address':[(${workspaceHub.address})], 'name':[(${workspaceHub.name})]});
 	</script>
 
 	<script th:inline="javascript">
@@ -76,6 +77,7 @@
 	
 		console.log( data[14].address);
 		console.log(data[14].name);
+		
 		
 		var myCenter; 
 		function initMap() {
@@ -170,7 +172,7 @@
 				// mouses over the marker.
 				var highlightedIcon = makeMarkerIcon('FFFF24');
 
-				function addMarkers() {
+				/* function addMarkers() {
 					// The following group uses the location array to create an array of
 					// markers on initialize.
 					if ((map != null) && (locations.length > 0)) {
@@ -178,7 +180,7 @@
 							// Get the position from the location array.
 						}
 					} 
-			}
+			} */
 					// Push the marker to our array of markers.
 					// Create an onclick event to open the large infowindow at each marker.
 				
@@ -192,6 +194,7 @@
 		for (var i =0; i<data.length; i++) {
 			address = data[i].address;
 			name = data[i].name;
+			idW = data[i].id;
 		
 		/* console.log(address); */
 		// Make sure the address isn't blank.
@@ -226,11 +229,27 @@
 										name : name,
 										animation : google.maps.Animation.DROP,
 										icon : defaultIcon,
+										url : `location?id=${idW} `,
+										id: i
 									
 									});
 
 							 		markers.push(marker); 
 
+		marker.addListener('mouseover', function() {
+			populateInfoWindow(this, largeInfowindow);
+		});
+		// Two event listeners - one for mouseover, one for mouseout,
+		// to change the colors back and forth.
+		marker.addListener('mouseover', function() {
+			this.setIcon(highlightedIcon);
+		});
+		marker.addListener('mouseout', function() {
+			this.setIcon(defaultIcon);
+		});
+		 google.maps.event.addListener(marker, 'click', function() {
+		        window.location.href = this.url;
+		    });
 							 		console.log(markers.length);
 							 		console.log(locations);
 								}
@@ -243,39 +262,8 @@
 			google.maps.event.addDomListener(window, 'load', initMap);	
 			console.log(name);
 			console.log(address);
-		}		
 			
-		}		
-	
-		</script>
-
-	<script>
-	/* 	
-		marker.addListener('click', function() {
-			populateInfoWindow(this, largeInfowindow);
-		});
-		// Two event listeners - one for mouseover, one for mouseout,
-		// to change the colors back and forth.
-		marker.addListener('mouseover', function() {
-			this.setIcon(highlightedIcon);
-		});
-		marker.addListener('mouseout', function() {
-			this.setIcon(defaultIcon);
-		});
-	 */
-
-	document.getElementById('show-listings').addEventListener('click',
-			showListings);
-	document.getElementById('hide-listings').addEventListener('click',
-			hideListings);
-
-	
-
-	document.getElementById('zoom-to-area').addEventListener('click',
-			function() {
-				zoomToArea();
-			});
-
+			
 		function populateInfoWindow(marker, infowindow) {
 			// Check to make sure the infowindow is not already opened on this marker.
 			if (infowindow.marker != marker) {
@@ -293,34 +281,53 @@
 				// get a
 				// panorama from that and set the options
 				function getStreetView(data, status) {
-					if (status == google.maps.StreetViewStatus.OK) {
-						var nearStreetViewLocation = data.location.latLng;
-						var heading = google.maps.geometry.spherical.computeHeading(
-								nearStreetViewLocation, marker.position);
-						infowindow.setContent('<div>' + marker.title
-								+ '</div><div id="pano"></div>');
-						var panoramaOptions = {
-							position : nearStreetViewLocation,
-							pov : {
-								heading : heading,
-								pitch : 30
-							}
-						};
-						var panorama = new google.maps.StreetViewPanorama(document
-								.getElementById('pano'), panoramaOptions);
-					} else {
-						infowindow.setContent('<div>' + marker.title + '</div>'
-								+ '<div>No Street View Found</div>');
-					}
-				}
-				// Use streetview service to get the closest streetview image within
-				// 50 meters of the markers position
-				streetViewService.getPanoramaByLocation(marker.position, radius,
-						getStreetView);
-				// Open the infowindow on the correct marker.
-				infowindow.open(map, marker);
-			}
-		}
+		            if (status == google.maps.StreetViewStatus.OK) {
+		              var nearStreetViewLocation = data.location.latLng;
+		              var heading = google.maps.geometry.spherical.computeHeading(
+		                nearStreetViewLocation, marker.position);
+		                infowindow.setContent('<div>' + marker.name + '</div><div id="pano"></div>');
+		                var panoramaOptions = {
+		                  position: nearStreetViewLocation,
+		                  pov: {
+		                    heading: heading,
+		                    pitch: 30
+		                  }
+		                };
+		              var panorama = new google.maps.StreetViewPanorama(
+		                document.getElementById('pano'), panoramaOptions);
+		            } else {
+		              infowindow.setContent('<div>' + marker.name + '</div>' +
+		                '<div>No Street View Found</div>');
+		            }
+		          }
+		          // Use streetview service to get the closest streetview image within
+		          // 50 meters of the markers position
+		          streetViewService.getPanoramaByLocation(marker.position, radius, getStreetView);
+		          // Open the infowindow on the correct marker.
+		          infowindow.open(map, marker);
+		        }
+		      }
+		}		
+			
+		}		
+	
+		</script>
+
+	<script>
+	 	
+
+	document.getElementById('show-listings').addEventListener('click',
+			showListings);
+	document.getElementById('hide-listings').addEventListener('click',
+			hideListings);
+
+	
+
+	/* document.getElementById('zoom-to-area').addEventListener('click',
+			function() {
+				zoomToArea();
+			}); */
+
 
 		// This function will loop through the markers array and display them all.
 		function showListings() {
@@ -333,6 +340,7 @@
 			map.fitBounds(bounds);
 		}
 
+	 
 		// This function will loop through the listings and hide them all.
 		function hideListings() {
 			for (var i = 0; i < markers.length; i++) {
@@ -352,6 +360,13 @@
 			return markerImage;
 		}
 		
+		
+		
+		/* function addLink() {
+			for (var i = 0; i < markers.length; i++) {
+				document.getElement
+			}
+		} */
 </script>
 
 
