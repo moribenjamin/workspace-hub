@@ -68,6 +68,31 @@ public class WorkSpaceController {
 	public String getOneLocation(@RequestParam Long id, Model model) {
 		model.addAttribute("location", workspaceHubRepo.findOne(id));
 		return "location";
+	}
+
+	@RequestMapping("/parking")
+	public String parkingFilter(@RequestParam("id") Long id, Model model) {
+		Parking selectedParking = parkingRepo.findOne(id);
+		model.addAttribute("workSpaces", workspaceHubRepo.findByParking(selectedParking));
+		return "parking";
+
+	}
+
+	@RequestMapping("/cost")
+	public String costFilter(@RequestParam("id") Long id, Model model) {
+		Cost selectedCost = costRepo.findOne(id);
+		model.addAttribute("workSpaces", workspaceHubRepo.findByCost(selectedCost));
+		return "cost";
+
+	}
+
+	@RequestMapping("/cost-parking")
+	public String costParkingFilter(@RequestParam("cost-id") Long costId, @RequestParam("parking-id") Long parkingId,
+			Model model) {
+		Cost selectedCost = costRepo.findOne(costId);
+		Parking selectedParking = parkingRepo.findOne(parkingId);
+		model.addAttribute("workSpaces", workspaceHubRepo.findByCostAndParking(selectedCost, selectedParking));
+		return "cost-parking";
 
 	}
 }
