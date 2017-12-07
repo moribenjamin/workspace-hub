@@ -32,7 +32,7 @@ public class WorkSpaceController {
 	@Resource
 	WorkSpaceHubRepository workspaceHubRepo;
 
-	@RequestMapping("/")
+	@RequestMapping("/splash")
 	public String showAllClasses(Model model) {
 
 		model.addAttribute("spaceTypes", spaceTypeRepo.findAll());
@@ -48,7 +48,7 @@ public class WorkSpaceController {
 		return "splashPage";
 	}
 
-	@RequestMapping("spaceTypes")
+	@RequestMapping("/")
 	public String showAllSpaceTypes(Model model) {
 		model.addAttribute("spaceTypes", spaceTypeRepo.findAll());
 		return "spaceTypes";
