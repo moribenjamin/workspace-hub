@@ -21,6 +21,7 @@ public class WorkspaceHub {
 	private Long id;
 
 	private String name;
+	private String displayName;
 	private String imageUrl;
 	@Lob
 	private String description;
@@ -35,6 +36,8 @@ public class WorkspaceHub {
 	// private Address address;
 
 	private String address;
+	private String displayAddressLineOne;
+	private String displayAddressLineTwo;
 
 	private String email;
 
@@ -55,10 +58,11 @@ public class WorkspaceHub {
 	protected WorkspaceHub() {
 	}
 
-	public WorkspaceHub(String name, String imageUrl, String email, String website, String facebook, String twitter,
-			String address, String phoneNumber, String description, SpaceType spaceType, Hours hours, Parking parking,
+	public WorkspaceHub(String name, String displayName, String imageUrl, String email, String website, String facebook, String twitter,
+			String address, String displayAddressLineOne, String displayAddressLineTwo, String phoneNumber, String description, SpaceType spaceType, Hours hours, Parking parking,
 			Cost cost, Capacity capacity, Feature... features) {
 		this.name = name;
+		this.displayName = displayName;
 		this.imageUrl = imageUrl;
 		this.description = description;
 		this.spaceType = spaceType;
@@ -69,6 +73,8 @@ public class WorkspaceHub {
 		this.phoneNumber = phoneNumber;
 		this.website = website;
 		this.address = address;
+		this.displayAddressLineOne = displayAddressLineOne;
+		this.displayAddressLineTwo = displayAddressLineTwo;
 		this.parking = parking;
 		this.cost = cost;
 		this.capacity = capacity;
@@ -137,6 +143,19 @@ public class WorkspaceHub {
 
 	public String getTwitter() {
 		return twitter;
+	}
+	
+
+	public String getDisplayName() {
+		return displayName;
+	}
+
+	public String getDisplayAddressLineOne() {
+		return displayAddressLineOne;
+	}
+
+	public String getDisplayAddressLineTwo() {
+		return displayAddressLineTwo;
 	}
 
 	public boolean isSpaceOpen(Hours hour) {

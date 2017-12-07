@@ -48,7 +48,7 @@ public class WorkSpaceController {
 		return "splashPage";
 	}
 
-	@RequestMapping("/spaceTypes")
+	@RequestMapping("spaceTypes")
 	public String showAllSpaceTypes(Model model) {
 		model.addAttribute("spaceTypes", spaceTypeRepo.findAll());
 		return "spaceTypes";

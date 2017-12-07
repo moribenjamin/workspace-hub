@@ -46,7 +46,9 @@
 				<img class="location-image" th:src="${location.imageUrl}"
 					alt="Picture of Work Space" />
 				<p class="location-address"
-					th:text="'Address: ' + ${location.address}"></p>
+					th:text="${location.displayAddressLineOne}"></p>
+					<p class="location-address"
+					th:text="${location.displayAddressLineTwo}"></p>
 				<p class="location-website" th:text="${location.website}"></p>
 				<p class="location-hours"
 					th:text="'Hours: ' + ${location.hours.hoursTitle}"></p>
