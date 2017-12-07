@@ -72,7 +72,7 @@
 	data.push({'id': [(${workspaceHub.id})], 'address':[(${workspaceHub.address})], 'name':[(${workspaceHub.name})]});
 	</script>
 
-	<script th:inline="javascript">
+	<script type="text/javascript">
 		console.log(data)
 	
 		console.log( data[14].address);
@@ -195,6 +195,7 @@
 			address = data[i].address;
 			name = data[i].name;
 			idW = data[i].id;
+			console.log(idW);
 		
 		/* console.log(address); */
 		// Make sure the address isn't blank.
@@ -215,7 +216,7 @@
 								if (status == google.maps.GeocoderStatus.OK) {
 									locations.push(results[0].geometry.location);
 								myCenter = results[0].geometry.location;
-								console.log(myCenter);
+								
 									/* var mapProp = {
 											center: myCenter,
 											zoom: 5,
@@ -232,7 +233,7 @@
 										url : `location?id=${idW} `,
 										id: i
 									
-									});
+									}); 
 
 							 		markers.push(marker); 
 
@@ -248,16 +249,17 @@
 			this.setIcon(defaultIcon);
 		});
 		 google.maps.event.addListener(marker, 'click', function() {
-		        window.location.href = this.url;
+			
+		        window.location.href = marker.url;
 		    });
 							 		console.log(markers.length);
 							 		console.log(locations);
 								}
 									
-								 else {
+								 /*  else {
 									
-											alert('Geocode was not successful for the following reason: ' + status);
-								}
+										 	alert('Geocode was not successful for the following reason: ' + status); 
+								}  */
 							});
 			google.maps.event.addDomListener(window, 'load', initMap);	
 			console.log(name);
@@ -285,7 +287,7 @@
 		              var nearStreetViewLocation = data.location.latLng;
 		              var heading = google.maps.geometry.spherical.computeHeading(
 		                nearStreetViewLocation, marker.position);
-		                infowindow.setContent('<div>' + marker.name + '</div><div id="pano"></div>');
+		                infowindow.setContent('<div>' + marker.title + '</div><div id="pano"></div>');
 		                var panoramaOptions = {
 		                  position: nearStreetViewLocation,
 		                  pov: {
@@ -296,7 +298,7 @@
 		              var panorama = new google.maps.StreetViewPanorama(
 		                document.getElementById('pano'), panoramaOptions);
 		            } else {
-		              infowindow.setContent('<div>' + marker.name + '</div>' +
+		              infowindow.setContent('<div>' + marker.title + '</div>' +
 		                '<div>No Street View Found</div>');
 		            }
 		          }
@@ -311,16 +313,38 @@
 			
 		}		
 	
-		</script>
-
-	<script>
 	 	
 
 	document.getElementById('show-listings').addEventListener('click',
 			showListings);
 	document.getElementById('hide-listings').addEventListener('click',
-			hideListings);
-
+	hideListings);
+	/* function createMarker(pos, t) {
+	    var marker = new google.maps.Marker({       
+	        position: pos, 
+	        map: m,  // google.maps.Map 
+	        title: t      
+	    }); 
+	    google.maps.event.addListener(marker, 'click', function() { 
+	       alert("I am marker " + marker.title); 
+	    }); 
+	    return marker;  
+	} */ 
+/* for (var i =0; i<markers.length; i++) {
+	var marker = new google.maps.Marker({
+		position : position,
+		name : name,
+		animation : google.maps.Animation.DROP,
+		icon : defaultIcon,
+		url : `location?id=${idW} `,
+		id: i
+	
+	}); */
+/* 	marker.url =  `location?id=${i} `;
+	 google.maps.event.addListener(marker, 'click', function() {
+	        window.location.href = this.url;
+	    });
+} */
 	
 
 	/* document.getElementById('zoom-to-area').addEventListener('click',
@@ -336,8 +360,10 @@
 			for (var i = 0; i < markers.length; i++) {
 				markers[i].setMap(map);
 				bounds.extend(markers[i].position);
+				markers[i].url = `location?id=${i+1}`
+				markers[i].title  = data[i].name;
 			}
-			map.fitBounds(bounds);
+			map.fitBounds(bounds)
 		}
 
 	 
