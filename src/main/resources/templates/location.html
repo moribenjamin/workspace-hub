@@ -36,15 +36,15 @@
 	<div class="container_location">
 
 
-
+<h2 class="location-name" th:text="${location.displayName}"></h2>
 			<div class="location-info">
 
-				<h3 class="location-name" th:text="${location.name}"></h3>
+				
 				<img class="location-image" th:src="${location.imageUrl}"
 					alt="Picture of Work Space" />
-				<p class="location-address"
+				<p class="location-address1"
 					th:text="${location.displayAddressLineOne}"></p>
-					<p class="location-address"
+					<p class="location-address2"
 					th:text="${location.displayAddressLineTwo}"></p>
 				<p class="location-website" th:text="${location.website}"></p>
 				<p class="location-hours"
@@ -61,7 +61,7 @@
 
 
 	</div>
-	<footer>
+	<footer class = "location">
 		<p>Copyright 2017</p>
 		<div class="contact-stuff">
 			<a href="www.facebook.com"><img src="images/facebook.png"

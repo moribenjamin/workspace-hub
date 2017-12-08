@@ -55,6 +55,7 @@ footer .contact-stuff{
 footer p {
 	display:flex;
 	justify-content: center;
+	padding-top: 20px;
 }
 
 .logo-image {
@@ -315,8 +316,34 @@ margin-left: 10px;
   display: block;
 }
 
+
 .sticky {
   position: fixed;
   top: 0;
   width: 100%;
 }
+
+.location-name {
+	display:flex;
+	justify-content: center;
+}
+.location-info {
+	display:grid;
+	grid-template-columns: 3fr 7fr;
+	grid-teplate-rows: 5fr 5fr;
+}
+.location-image {
+	grid-column: 2/3;
+	grid-row: 1/3;
+	height: 200px;
+
+}
+.location-address1 {
+	grid-column: 1/2;
+	
+}
+.location-address1 {
+	grid-column: 2/3;
+}
+
+
