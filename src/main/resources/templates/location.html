@@ -46,7 +46,10 @@
 					th:text="${location.displayAddressLineOne}"></p>
 					<p class="location-address2"
 					th:text="${location.displayAddressLineTwo}"></p>
-				<p class="location-website" th:text="${location.website}"></p>
+				<!-- <p class="location-website" th:text="${location.website}"></p> -->
+				<a th:href="${location.website}">
+					<p class="location-website">Visit Website</p>
+				</a>
 				<p class="location-hours"
 					th:text="'Hours: ' + ${location.hours.hoursTitle}"></p>
 				<p class="location-parking"
