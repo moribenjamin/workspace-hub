@@ -95,6 +95,18 @@ margin: 10px 10px;
  */
 }
 
+.container_locations {
+	margin: 0 70px 20px 70px;
+	height: 61vh;
+}
+
+.options-box {
+	/* display: flex;
+	flex-direction: column;
+	justify-content: center; */
+	height: 60px;
+}
+
 nav .space {
 	display: flex;
 	justify-content: space-around;
