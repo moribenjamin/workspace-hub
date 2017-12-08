@@ -273,5 +273,7 @@ public class WorkSpacePopulator implements CommandLineRunner {
 		for (WorkspaceHub workspacehub : workspaceHubRepo.findByCostAndParking(coffee, freeStreet)) {
 			log.info(workspacehub.toString());
 		}
+		
+		log.info("");
 	}
 }
