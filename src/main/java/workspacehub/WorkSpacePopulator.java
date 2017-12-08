@@ -151,7 +151,7 @@ public class WorkSpacePopulator implements CommandLineRunner {
 				"\"820 High Street, Worthington, OH, 43085\"","820 High Street","Worthington, OH 43085", "614-807-2626", "djskdkjsak", library, hours7, onSite, free,
 				cap));
 
-		// fetch customers by last name
+		
 		log.info("Parking Garage");
 		log.info("--------------------------------------------");
 		for (WorkspaceHub workspacehub : workspaceHubRepo.findByParking(garage)) {
@@ -273,5 +273,7 @@ public class WorkSpacePopulator implements CommandLineRunner {
 		for (WorkspaceHub workspacehub : workspaceHubRepo.findByCostAndParking(coffee, freeStreet)) {
 			log.info(workspacehub.toString());
 		}
+		
+		log.info("");
 	}
 }
