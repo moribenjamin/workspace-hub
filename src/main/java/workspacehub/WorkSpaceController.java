@@ -67,6 +67,7 @@ public class WorkSpaceController {
 
 	public String getLocations(Model model) {
 		model.addAttribute("workspaceHubs", workspaceHubRepo.findAll());
+		model.addAttribute("spaceTypes", spaceTypeRepo.findAll());
 
 		return "locations";
 	}
