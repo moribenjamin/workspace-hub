@@ -6,7 +6,7 @@ footer {
 }
 
 html, body {
-	font-family: Arial, sans-serif;
+	font-family: 'Carme', sans-serif;
 	height: 100%;
 	margin: 0;
 	padding: 0;
@@ -52,7 +52,7 @@ hr {
 	right: 0px;
 }
 .map2 {
-height: 200px;	
+height: 200px;
 }
 
 .options-box {
@@ -91,7 +91,7 @@ height: 200px;
 }
 
 html, body {
-	font-family: Arial, sans-serif;
+	font-family: 'Carme', sans-serif;
 	height: 100%;
 	margin: 0;
 	padding: 0;
