@@ -17,7 +17,7 @@
   	</header>
 
  <nav class = "navbar">
-<a href="/spaceTypes">Home</a>
+<a href="/">Home</a>
 <div class="dropdown">
    <button class="dropbtn">Categories
      <i class="fa fa-caret-down"></i>
@@ -67,7 +67,7 @@
 	var address;
 	var name;
 	var idW;
-	
+
 	</script>
 	<script th:inline="javascript">
 	var data = [];
@@ -79,15 +79,15 @@
 
 	<script type="text/javascript">
 		console.log(data)
-	
+
 		console.log( data[14].address);
 		console.log(data[14].name);
-		
-		
-		var myCenter; 
+
+
+		var myCenter;
 		function initMap() {
 				// Create a styles array to use with the map.
-			
+
 				var styles = [ {
 					featureType : 'water',
 					stylers : [ {
@@ -169,7 +169,7 @@
 					mapTypeControl : false
 				});
 				var largeInfowindow = new google.maps.InfoWindow();
-				
+
 				// Style the markers a bit. This will be our listing marker icon.
 				var defaultIcon = makeMarkerIcon('0091ff');
 
@@ -184,27 +184,27 @@
 						for (var i = 0; i < locations.length; i++) {
 							// Get the position from the location array.
 						}
-					} 
+					}
 			} */
 					// Push the marker to our array of markers.
 					// Create an onclick event to open the large infowindow at each marker.
-				
+
 				// Add an event listener so that the polygon is captured, call the
 				// searchWithinPolygon function. This will show the markers in the polygon,
 				// and hide any outside of it.
-				
+
 		var geocoder = new google.maps.Geocoder();
 		// Get the address or place that the user entered.
-			
+
 		for (var i =0; i<data.length; i++) {
 			address = data[i].address;
 			name = data[i].name;
 			idW = data[i].id;
 			console.log(idW);
-		
+
 		/* console.log(address); */
 		// Make sure the address isn't blank.
-		
+
 			// Geocode the address/area entered to get the center. Then, center the
 			// map
 			// on it and zoom in
@@ -217,18 +217,18 @@
 								}
 							},
 							function(results, status) {
-							
+
 								if (status == google.maps.GeocoderStatus.OK) {
 									locations.push(results[0].geometry.location);
 								myCenter = results[0].geometry.location;
-								
+
 									/* var mapProp = {
 											center: myCenter,
 											zoom: 5,
 											mapTypeId: google.maps.MapTypeId.ROADMAP
 											}; */
 								var position = myCenter;
-									
+
 									// Create a marker per location, and put into markers array.
 									var marker = new google.maps.Marker({
 										position : position,
@@ -237,10 +237,10 @@
 										icon : defaultIcon,
 										url : `location?id=${idW} `,
 										id: i
-									
-									}); 
 
-							 		markers.push(marker); 
+									});
+
+							 		markers.push(marker);
 
 		marker.addListener('mouseover', function() {
 			populateInfoWindow(this, largeInfowindow);
@@ -254,23 +254,23 @@
 			this.setIcon(defaultIcon);
 		});
 		 google.maps.event.addListener(marker, 'click', function() {
-			
+
 		        window.location.href = marker.url;
 		    });
 							 		console.log(markers.length);
 							 		console.log(locations);
 								}
-									
+
 								 /*  else {
-									
-										 	alert('Geocode was not successful for the following reason: ' + status); 
+
+										 	alert('Geocode was not successful for the following reason: ' + status);
 								}  */
 							});
-			google.maps.event.addDomListener(window, 'load', initMap);	
+			google.maps.event.addDomListener(window, 'load', initMap);
 			console.log(name);
 			console.log(address);
-			
-			
+
+
 		function populateInfoWindow(marker, infowindow) {
 			// Check to make sure the infowindow is not already opened on this marker.
 			if (infowindow.marker != marker) {
@@ -314,27 +314,27 @@
 		          infowindow.open(map, marker);
 		        }
 		      }
-		}		
-			
-		}		
-	
-	 	
+		}
+
+		}
+
+
 
 	document.getElementById('show-listings').addEventListener('click',
 			showListings);
 	document.getElementById('hide-listings').addEventListener('click',
 	hideListings);
 	/* function createMarker(pos, t) {
-	    var marker = new google.maps.Marker({       
-	        position: pos, 
-	        map: m,  // google.maps.Map 
-	        title: t      
-	    }); 
-	    google.maps.event.addListener(marker, 'click', function() { 
-	       alert("I am marker " + marker.title); 
-	    }); 
-	    return marker;  
-	} */ 
+	    var marker = new google.maps.Marker({
+	        position: pos,
+	        map: m,  // google.maps.Map
+	        title: t
+	    });
+	    google.maps.event.addListener(marker, 'click', function() {
+	       alert("I am marker " + marker.title);
+	    });
+	    return marker;
+	} */
 /* for (var i =0; i<markers.length; i++) {
 	var marker = new google.maps.Marker({
 		position : position,
@@ -343,14 +343,14 @@
 		icon : defaultIcon,
 		url : `location?id=${idW} `,
 		id: i
-	
+
 	}); */
 /* 	marker.url =  `location?id=${i} `;
 	 google.maps.event.addListener(marker, 'click', function() {
 	        window.location.href = this.url;
 	    });
 } */
-	
+
 
 	/* document.getElementById('zoom-to-area').addEventListener('click',
 			function() {
@@ -371,7 +371,7 @@
 			map.fitBounds(bounds)
 		}
 
-	 
+
 		// This function will loop through the listings and hide them all.
 		function hideListings() {
 			for (var i = 0; i < markers.length; i++) {
@@ -390,9 +390,9 @@
 							34), new google.maps.Size(21, 34));
 			return markerImage;
 		}
-		
-		
-		
+
+
+
 		/* function addLink() {
 			for (var i = 0; i < markers.length; i++) {
 				document.getElement

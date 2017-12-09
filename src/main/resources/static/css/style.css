@@ -1,5 +1,8 @@
 header, footer {
-	background-color: #7C92E4;
+	background-color: #FFFFFF;
+}
+footer {
+ background-color: #D9B400;
 }
 
 html, body {
@@ -167,7 +170,7 @@ hr {
 }
 
 nav {
-	background-color: #CCCCCC;
+	background-color: #929781;
 	color: white;
 	border: black 2px solid;
 }
