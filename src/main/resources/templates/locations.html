@@ -7,34 +7,39 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 <title>WorkSpace Hub Locations</title>
 <link rel="stylesheet" type="text/css" href="css/normalize.css" />
-<link rel="stylesheet" type="text/css" href="css/layout.css" />
 <link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/layout.css" />
 
 </head>
 <body>
+<header>
+  		<img src="images/Logo.png" alt="logo" class="logo-image"/>
+  	</header>
+
+ <nav class = "navbar">
+<a href="/spaceTypes">Home</a>
+<div class="dropdown">
+   <button class="dropbtn">Categories
+     <i class="fa fa-caret-down"></i>
+   </button>
+   <div class="dropdown-content">
+          <a th:each="spaceType: ${spaceTypes}" th:text="${spaceType.spaceTitle}" th:href="@{/spaceType(id=${spaceType.spaceTypeId})}"></a>
+   </div>
+ </div>
+ <a href="/locations.html">Locations</a>
+        <a href="/about-us.html">About Us</a>
+    </nav>
 	<div class="container_locations">
 		<div class="options-box">
 			<h1>Find Workspace Hub</h1>
 			<div>
-				<input id="show-listings" type="button" value="Show Listings"></input>
-				<input id="hide-listings" type="button" value="Hide Listings"></input>
+				<input id="show-listings" type="button" value="Show Workspace Hubs"></input>
+				<input id="hide-listings" type="button" value="Hide Workspace Hubs"></input>
 				<hr></hr>
-
-			</div>
-
-			<div>
-				<input id="zoom-to-area-text" type="text"
-					placeholder="Enter your favorite area!"></input> <input
-					id="zoom-to-area" type="button" value="Zoom"></input>
 			</div>
 		</div>
 		<div id="map"></div>
 	</div>
-	<!--
-		<a th:href="@{/workspaceHub(id=${workspaceHub.id})}">  <img th:src="${spaceType.spaceImageUrl}" alt="Picture of type of workspace"/>
-		</a>
-	</div> -->
-
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 	</script>
@@ -156,7 +161,7 @@
 				// Constructor creates a new map - only center and zoom are required.
 				map = new google.maps.Map(document.getElementById('map'), {
 					center : {
-						lat : 40.7413549,
+						lat : 39.9612,
 						lng : -82.9988
 					},
 					zoom : 13,
@@ -401,7 +406,15 @@
 
 	<!-- <script src="/js/script.js"></script> -->
 
-
+<footer>
+		<p>Copyright 2017</p>
+  		<div class="contact-stuff">
+  			<a href="www.facebook.com"><img src="images/facebook.png" alt="facebook"/></a>
+  			<a href="www.twitter.com"><img src="images/twitter.png" alt="twitter"/></a>
+  			<a href="mailto:email@email.com"><img src="images/email.jpg" alt="email"/></a>
+        <img src="images/copyright.png" alt="copyright"/>
+  		</div>
+  	</footer>
 
 
 </body>
