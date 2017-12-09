@@ -133,6 +133,7 @@ nav .space {
 	margin-bottom: 20px;
 	border-style: solid;
 	max-width: 90% padding: 16px 5px;
+	background-color: #F2F5F6;
 }
 
 .card-image {
@@ -347,16 +348,17 @@ align-items: center;
 }
 .location-info {
 	display:grid;
-	grid-template-columns: 4fr 3fr 3fr;
+	grid-template-columns: 3fr 3fr 3fr;
 	grid-teplate-rows: repeat(5,1fr);
 	grid-column-gap: 20px;
-	
+	background-color: #F2F5F6;
 }
 .location-image {
 	grid-column: 1/2;
-	grid-row: 1/5;
+	grid-row: 1/6;
 	height: 200px;
-/*  margin-left: 35px; */
+ margin-left: 10px;
+ margin-top:40px;
 	justify-content: center;
 
 
@@ -366,10 +368,10 @@ max-width: 200px;
 }
 
 .location-website {
-	grid-column: 1/2;
-	grid-row: 5/6;
-	margin-top: 10px;
-	display:flex;
+	grid-column: 3/4;
+	grid-row: 3/6;
+	margin-top: 120px;
+/* 	display:flex; */
 
 	 
 	
@@ -377,13 +379,18 @@ max-width: 200px;
 .location-address1 {
 	grid-column: 2/3;
 	grid-row:2/3;
-	
+	 display:flex;
+justify-content: center;
+align-items: center;
 	
 }
 .location-address2 {
 	grid-column: 2/3;
 	grid-row:2/3;
-	margin-top:20px;
+	margin-top:30px;
+	 display:flex;
+justify-content: center;
+align-items: center;
 	
 }
 .street_view {
@@ -393,12 +400,45 @@ max-width: 200px;
 .location-details {
 	grid-column: 2/3;
 	grid-row: 1/2;
+	margin-top: 10px;
+	margin-bottom: 15px;
+	 display:flex;
+justify-content: center;
+align-items: center;
 }
 .hours {
 	grid-column: 3/4;
 	grid-row: 1/2;
+	 display:flex;
+justify-content: center;
+align-items: center;
 }
 .location-hours {
 	grid-column: 3/4;
 	grid-row: 2/5 ;
+	/*  display:flex;
+justify-content: center;
+align-items: center; */
+}
+.map2 {
+	grid-column: 2/3;
+	margin-top: 10px;
+}
+.location-parking {
+	grid-column: 3/4;
+	grid-row: 3/4;
+	margin-top:25px;
+	
+}
+.location-cost {
+	grid-column: 3/4;
+	grid-row: 3/4;
+	margin-top: 55px;
+
+}
+.location-capacity {
+	grid-column: 3/4;
+	grid-row: 3/4;
+		margin-top: 90px;
+	
 }
