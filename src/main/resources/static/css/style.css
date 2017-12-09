@@ -6,7 +6,8 @@ footer {
 }
 
 html, body {
-	font-family: Arial, sans-serif;
+	/*font-family: Arial, sans-serif;*/
+	font-family: 'Carme', sans-serif;
 	height: 100%;
 	margin: 0;
 	padding: 0;
@@ -85,13 +86,6 @@ hr {
 
 #zoom-to-area {
 	width: 24%;
-}
-
-html, body {
-	font-family: Arial, sans-serif;
-	height: 100%;
-	margin: 0;
-	padding: 0;
 }
 
 .container_locations {
@@ -173,6 +167,7 @@ nav {
 	background-color: #929781;
 	color: white;
 	border: black 2px solid;
+	font-family: 'Carme', sans-serif;
 }
 
 .home-images img {
