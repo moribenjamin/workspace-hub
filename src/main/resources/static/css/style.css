@@ -52,6 +52,9 @@ hr {
 	position: absolute;
 	right: 0px;
 }
+.map2 {
+height: 200px;	
+}
 
 .options-box {
 	background: #fff;
@@ -127,7 +130,9 @@ hr {
 	position: absolute;
 	right: 0px;
 }
-
+#map2 {
+	height: 200px;
+}
 .options-box {
 	background: #fff;
 	border: 1px solid #999;
