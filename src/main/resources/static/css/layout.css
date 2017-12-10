@@ -40,6 +40,7 @@ header {
 	grid-column: 1/-1;
 	/* grid-row: 1/2; */
 	justify-content: center;
+
 }
 
 /* nav {
@@ -56,14 +57,42 @@ footer .contact-stuff{
 	display: flex;
 	align-content: center;
 
-	justify-content: flex-end;
+	justify-content: center;
 	align-items: center;
 	padding: 20px 20px;
+	
 }
+
 footer p {
 	display:flex;
 	justify-content: center;
 	padding-top: 20px;
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
 
 .logo-image {
@@ -88,8 +117,9 @@ footer p {
 }
 
 .contact-stuff img {
-	width: 20px;
-	height: 20px;
+	width: 30px;
+	height: 30px;
+	margin-right: 5px;
 }
 
 .container_space {
