@@ -5,7 +5,6 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -63,20 +62,16 @@ public class WorkSpaceController {
 
 	@RequestMapping("/locations")
 
-
-
 	public String getLocations(Model model) {
 		model.addAttribute("workspaceHubs", workspaceHubRepo.findAll());
 		model.addAttribute("spaceTypes", spaceTypeRepo.findAll());
 
 		return "locations";
 	}
-	/*@RequestMapping(value = "/js", method = RequestMethod.GET)
-    public String getExampleJS(Model model) {
-        model.addAttribute();
-        return "studentCheck.js";
-    }*/
-	
+	/*
+	 * @RequestMapping(value = "/js", method = RequestMethod.GET) public String
+	 * getExampleJS(Model model) { model.addAttribute(); return "studentCheck.js"; }
+	 */
 
 	@RequestMapping("/location")
 	public String getOneLocation(@RequestParam Long id, Model model) {
@@ -88,7 +83,7 @@ public class WorkSpaceController {
 	@RequestMapping("/parking")
 	public String parkingFilter(@RequestParam("id") Long id, Model model) {
 		Parking selectedParking = parkingRepo.findOne(id);
-		model.addAttribute("workSpaces", workspaceHubRepo.findByParking(selectedParking));
+		model.addAttribute("workspaceHubs", workspaceHubRepo.findByParking(selectedParking));
 		return "parking";
 
 	}
@@ -96,7 +91,7 @@ public class WorkSpaceController {
 	@RequestMapping("/cost")
 	public String costFilter(@RequestParam("id") Long id, Model model) {
 		Cost selectedCost = costRepo.findOne(id);
-		model.addAttribute("workSpaces", workspaceHubRepo.findByCost(selectedCost));
+		model.addAttribute("workspaceHubs", workspaceHubRepo.findByCost(selectedCost));
 		return "cost";
 
 	}
@@ -106,7 +101,7 @@ public class WorkSpaceController {
 			Model model) {
 		Cost selectedCost = costRepo.findOne(costId);
 		Parking selectedParking = parkingRepo.findOne(parkingId);
-		model.addAttribute("workSpaces", workspaceHubRepo.findByCostAndParking(selectedCost, selectedParking));
+		model.addAttribute("workspaceHubs", workspaceHubRepo.findByCostAndParking(selectedCost, selectedParking));
 		return "cost-parking";
 
 	}
