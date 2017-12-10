@@ -4,18 +4,34 @@
 	padding: 0;
 }
 
-.container {
-
-	max-width: 850px;
-
+.container-home {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-template-rows: auto auto;
+	margin: 0 auto;
+	max-width: 1000px;
+	padding: 10px;
+	grid-column-gap: 20px;
 }
-.home-images img {
-width:100px;
 
+.container-home img {
+	width: 330px;
+	height: 200px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	
 }
+
 
 .nearme-icon{
-	/* grid-row: 2/3; */
+display:flex;
+justify-content: center;
+	grid-row: 2/3;
+	
+}
+.nearme-icon img {
+	width: 500px;
+	height: auto;
 }
 
 
@@ -83,7 +99,7 @@ footer p {
     border-radius: 6px;
     padding: 5px 0;
     
-    /* Position the tooltip */
+   
     position: absolute;
     z-index: 1;
     bottom: 100%;
