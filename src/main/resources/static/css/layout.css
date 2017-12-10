@@ -150,6 +150,19 @@ margin: 10px 10px;
  */
 }
 
+.container_filter {
+	display: flex;
+	column: 1/-1;
+	margin: 0 auto;
+	max-width: 1000px;
+	padding: 16px 5px;
+	justify-content: center;
+}
+
+.container_filter img {
+	width: 600px;
+	height: 400px;
+}
 nav .space {
 	display: flex;
 	justify-content: space-around;
