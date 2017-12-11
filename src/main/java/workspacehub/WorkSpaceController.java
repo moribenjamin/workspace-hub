@@ -56,7 +56,7 @@ public class WorkSpaceController {
 	@RequestMapping("/spaceType")
 	public String getOneSpaceType(@RequestParam Long id, Model model) {
 		model.addAttribute("spaceType", spaceTypeRepo.findOne(id));
-		model.addAttribute("spaceTypes", spaceTypeRepo.findAll());
+		model.addAttribute("spaceTypes", 0.findAll());
 		return "spaceType";
 	}
 
@@ -108,4 +108,10 @@ public class WorkSpaceController {
 		return "cost-parking";
 
 	}
+
+	@RequestMapping("/about-us")
+	public String aboutUs() {
+		return "about-us";
+	}
+
 }
