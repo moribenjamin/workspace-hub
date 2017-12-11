@@ -171,9 +171,15 @@ nav .space {
 
 
 .filter {
+	display: flex;
+	flex-direction: column;
 	grid-column: 2/3;
 	height: 100%;
-	background-color: pink;
+}
+
+.filter p{
+	align-self: center;
+	padding-top: 15px;
 }
 .space-title {
 	display: flex;
