@@ -126,7 +126,7 @@ public class WorkSpacePopulator implements CommandLineRunner {
 				"https://www.starbucks.com/store-locator/store/1011597/north-high-and-east-torrence-3580-north-high-street-columbus-oh-43214-us",
 				"https://www.facebook.com/Starbucks/", "twitter.com/starbucks",
 				"\"3580 N High St, Columbus, OH ,43214\"", "3580 N High Street", "Columbus, OH 43214", "(614) 263-1292",
-				"Coffeehouse with space for remote work, pletny of small tables and coffee.", coffeeShop, hours8,
+				"Coffeehouse with space for remote work, plenty of small tables and coffee.", coffeeShop, hours8,
 				onSite, coffee, cap));
 		workspaceHubRepo.save(new WorkspaceHub("\"Crimson Cup Clintonville\"", "Crimson Cup Clintonville",
 				"/images/coffee/crimson-cup/crimsoninside.jpg", "email",
@@ -139,7 +139,7 @@ public class WorkSpacePopulator implements CommandLineRunner {
 				"/images/coffee/giant-eagle/gianteagleinside.jpg", "email", "https://www.marketdistrict.com/",
 				"https://www.facebook.com/marketdistrict/", "twitter.com/marketdistrict",
 				"\"840 W 3rd Ave, Columbus, OH, 43212\"", "840 W 3rd Avenue", "Columbus, OH 43212", "(614) 294-2186",
-				"Grocery store with endless food options, coffee with large loft for studying and collaborating inclusing dozens of tables.",
+				"Grocery store with endless food options, coffee with large loft for studying and collaborating including dozens of tables.",
 				coffeeShop, hours10, onSite, coffee, cap));
 		workspaceHubRepo.save(new WorkspaceHub("\"Mission Coffee\"", "Mission Coffee",
 				"/images/coffee/mission-coffee/missioninside.jpg", "email", "https://www.missioncoffeeco.com/",

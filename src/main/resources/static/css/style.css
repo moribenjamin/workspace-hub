@@ -6,7 +6,7 @@ footer {
 }
 
 html, body {
-	font-family: Arial, sans-serif;
+	font-family: 'Carme', sans-serif;
 	height: 100%;
 	margin: 0;
 	padding: 0;
@@ -51,6 +51,9 @@ hr {
 	position: absolute;
 	right: 0px;
 }
+.map2 {
+height: 200px;
+}
 
 .options-box {
 	background: #fff;
@@ -88,7 +91,7 @@ hr {
 }
 
 html, body {
-	font-family: Arial, sans-serif;
+	font-family: 'Carme', sans-serif;
 	height: 100%;
 	margin: 0;
 	padding: 0;
@@ -133,7 +136,9 @@ hr {
 	position: absolute;
 	right: 0px;
 }
-
+#map2 {
+	height: 200px;
+}
 .options-box {
 	background: #fff;
 	border: 1px solid #999;
@@ -175,7 +180,4 @@ nav {
 	border: black 2px solid;
 }
 
-.home-images img {
-	width: 600px;
-	height: 100%;
-}
+
