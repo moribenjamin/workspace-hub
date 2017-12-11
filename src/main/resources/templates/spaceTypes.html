@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
   <title>WorkSpace Hub -- Home</title>
-  <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
+ <!--  <link rel="stylesheet" type="text/css" href="css/normalize.css"/> -->
   <link rel="stylesheet" type="text/css" href="css/layout.css"/>
   <link rel="stylesheet" type="text/css" href="css/style.css"/>
 
@@ -21,7 +21,6 @@
   	</header>
 <div class="placeholder">
  <nav class = "navbar">
-<<<<<<< Updated upstream
 <a href="/">Home</a>
 <div class="dropdown">
    <button class="dropbtn">Categories
@@ -35,20 +34,6 @@
         <a href="/about-us.html">About Us</a>
     </nav>
     </div>
-=======
- <a href="/">Home</a>
- <div class="dropdown">
-    <button class="dropbtn">Categories
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-           <a th:each="spaceType: ${spaceTypes}" th:text="${spaceType.spaceTitle}" th:href="@{/spaceType(id=${spaceType.spaceTypeId})}"></a>
-    </div>
-  </div>
-  <a href="/locations.html">Locations</a>
-         <a href="/about-us.html">About Us</a>
-     </nav>
->>>>>>> Stashed changes
   <div class="container-home">
 
       <section class="home-images">
