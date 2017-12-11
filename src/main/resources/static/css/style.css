@@ -27,7 +27,7 @@ input {
 }
 
 h1 {
-	color: #030204;
+	color: black;
 	font-size: 22px;
 	margin: 0 0 10px 0;
 	text-align: center;
@@ -175,9 +175,13 @@ hr {
 }
 
 nav {
-	background-color: #929781;
+	background-color: #9A9C9E;
 	color: white;
-	border: black 2px solid;
 }
 
-
+.filter{
+	background-color:#BBBEC1;
+}
+.filter p{
+	color: white;
+}
