@@ -113,12 +113,12 @@ footer p {
 	grid-column: 1/-1;
 	grid-row: 3/4;
 	justify-content: center;
-<<<<<<< HEAD
+
 	padding-top: 30px;
 } */
-=======
+
 }
->>>>>>> f2440377908d4470d5e980adcf82f8db9df05f33
+
 
 .spacetype-image {
 	display: grid;
