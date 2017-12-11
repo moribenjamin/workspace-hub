@@ -1,5 +1,4 @@
-
-   	var myCenter;
+var myCenter;
 	function initMap() {
 			var styles = [ {
 				featureType : 'water',
