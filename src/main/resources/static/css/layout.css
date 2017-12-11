@@ -1,3 +1,193 @@
+@media ( min-width : 320px) {
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+	html {
+		font-size: 100%;
+	}
+
+	.logo-image {
+		height: auto;
+		width: 7rem;
+	}
+	body {
+	width: 100vw;
+	}
+	header {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	header h1 {
+		font-size: 15px;
+		margin-top: 5px;
+	}
+	
+	.placeholder {
+	height: 25%;
+	
+	}
+	nav {
+	align-items: center;
+	display: flex;
+	flex-direction: row;
+	height: 50px;
+	justify-content: space-around;
+	margin-bottom: 20px;
+}
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+}
+.container-home{
+	display:flex;
+	flex-direction: column;
+	padding: 15px 15px;
+}
+.container-home img {
+	width: 100%;
+	margin-bottom: 20px;
+}
+footer .contact-stuff{
+	display: flex;
+	align-content: center;
+
+	justify-content: center;
+	align-items: center;
+	padding: 20px 20px;
+
+}
+
+footer p {
+	display:flex;
+	justify-content: center;
+	padding-top: 20px;
+}
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+nav .space {
+	display: flex;
+	justify-content: space-around;
+}
+
+
+
+	@
+	-webkit-keyframes animatetop {
+		from {top: -300px;
+		opacity: 0
+	}
+	to {
+		top: 0;
+		opacity: 1
+	}
+}
+
+@
+keyframes animatetop {
+	from {top: -300px;
+	opacity: 0
+}
+
+to {
+	top: 0;
+	opacity: 1
+}
+
+}
+.dropdown {
+	float: left;
+	overflow: hidden;
+}
+
+.dropdown .dropbtn {
+	font-size: 70%;
+	border: none;
+	outline: none;
+	color: white;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: 'Carme', sans-serif;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+	background-color: black;
+}
+
+.navbar a {
+	font-size: 70%;
+	border: none;
+	outline: none;
+	color: white;
+	padding: 14px 16px;
+	background-color: inherit;
+	text-decoration: none;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.placeholder{
+	height: 50px;
+}
+
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.contact-stuff img {
+	width: 30px;
+	height: 30px;
+	margin-right: 5px;
+}	
+}
+@media ( min-width : 1200px) {
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -6,19 +196,22 @@
 
 .container-home {
 	display: flex;
+	flex-direction:column;
 	justify-content: space-around;
-	flex-wrap: wrap;
-	/* grid-template-columns: auto auto auto;
-	grid-template-rows: auto auto;
-	margin: 0 auto;
 	max-width: 1000px;
-	padding: 10px;
-	grid-column-gap: 20px; */
+	flex-wrap: wrap;
+		margin: 0 auto;
+		padding: 10px;
+
+
+
+	grid-column-gap: 20px; 
 }
 
+
 .container-home img {
-	width: 330px;
-	height: 200px;
+	width: 400px;
+	 height: 300px; 
 	margin-top: 20px;
 	margin-bottom: 10px;
 }
@@ -38,6 +231,7 @@ justify-content: center;
 
 body {
 	height: 100vh;
+	width: 100vw;
 }
 
 nav {
@@ -106,31 +300,28 @@ footer p {
 	width: 14rem;
 }
 
-/* .home-images {
+.home-images {
 	display: flex;
+	
 	flex-direction: column;
 	align-items: center;
 	grid-column: 1/-1;
 	grid-row: 3/4;
 	justify-content: center;
+padding-top: 20px;
 
-	padding-top: 30px;
-} */
+} 
 
-}
 
 
 .spacetype-image {
 	display: grid;
 	grid-column-gap: 20px;
 	grid-template-columns: repeat(3, 1fr);
-}
+} 
+ 
 
-.contact-stuff img {
-	width: 30px;
-	height: 30px;
-	margin-right: 5px;
-}
+
 
 .container_space {
 	display: grid;
@@ -481,4 +672,5 @@ align-items: center; */
 	grid-row: 3/4;
 		margin-top: 90px;
 
+}
 }
