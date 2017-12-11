@@ -84,6 +84,7 @@ public class WorkSpaceController {
 	public String parkingFilter(@RequestParam("id") Long id, Model model) {
 		Parking selectedParking = parkingRepo.findOne(id);
 		model.addAttribute("workspaceHubs", workspaceHubRepo.findByParking(selectedParking));
+		model.addAttribute("spaceTypes", spaceTypeRepo.findAll());
 		return "parking";
 
 	}
@@ -92,6 +93,7 @@ public class WorkSpaceController {
 	public String costFilter(@RequestParam("id") Long id, Model model) {
 		Cost selectedCost = costRepo.findOne(id);
 		model.addAttribute("workspaceHubs", workspaceHubRepo.findByCost(selectedCost));
+		model.addAttribute("spaceTypes", spaceTypeRepo.findAll());
 		return "cost";
 
 	}
@@ -102,6 +104,7 @@ public class WorkSpaceController {
 		Cost selectedCost = costRepo.findOne(costId);
 		Parking selectedParking = parkingRepo.findOne(parkingId);
 		model.addAttribute("workspaceHubs", workspaceHubRepo.findByCostAndParking(selectedCost, selectedParking));
+		model.addAttribute("spaceTypes", spaceTypeRepo.findAll());
 		return "cost-parking";
 
 	}
