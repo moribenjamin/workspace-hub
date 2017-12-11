@@ -115,7 +115,8 @@ public class WorkSpaceController {
 	}
 
 	@RequestMapping("/about-us")
-	public String aboutUs() {
+	public String aboutUs(Model model) {
+		model.addAttribute("spaceTypes", spaceTypeRepo.findAll());
 		return "about-us";
 	}
 
