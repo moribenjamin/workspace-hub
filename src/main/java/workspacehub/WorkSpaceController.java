@@ -61,21 +61,27 @@ public class WorkSpaceController {
 		return "spaceType";
 	}
 
+	public String parkingFilterButtons(@RequestParam Long id, Model model) {
+		Parking selectedParking = parkingRepo.findOne(id);
+		model.addAttribute("parking", parkingRepo.findOne(id));
+		model.addAttribute("parking", parkingRepo.findAll());
+		model.addAttribute("workSpaces", workspaceHubRepo.findAll());
+		model.addAttribute("workSpaces", workspaceHubRepo.findByParking(selectedParking));
+		return "parking";
+
+	}
+
 	@RequestMapping("/locations")
-
-
 
 	public String getLocations(Model model) {
 		model.addAttribute("workspaceHubs", workspaceHubRepo.findAll());
 
 		return "locations";
 	}
-	/*@RequestMapping(value = "/js", method = RequestMethod.GET)
-    public String getExampleJS(Model model) {
-        model.addAttribute();
-        return "studentCheck.js";
-    }*/
-	
+	/*
+	 * @RequestMapping(value = "/js", method = RequestMethod.GET) public String
+	 * getExampleJS(Model model) { model.addAttribute(); return "studentCheck.js"; }
+	 */
 
 	@RequestMapping("/location")
 	public String getOneLocation(@RequestParam Long id, Model model) {
