@@ -75,13 +75,8 @@ public class WorkSpaceController {
 	public String getLocations(Model model) {
 		model.addAttribute("workspaceHubs", workspaceHubRepo.findAll());
 		model.addAttribute("spaceTypes", spaceTypeRepo.findAll());
-
 		return "locations";
 	}
-	/*
-	 * @RequestMapping(value = "/js", method = RequestMethod.GET) public String
-	 * getExampleJS(Model model) { model.addAttribute(); return "studentCheck.js"; }
-	 */
 
 	@RequestMapping("/location")
 	public String getOneLocation(@RequestParam Long id, Model model) {
@@ -120,7 +115,8 @@ public class WorkSpaceController {
 	}
 
 	@RequestMapping("/about-us")
-	public String aboutUs() {
+	public String aboutUs(Model model) {
+		model.addAttribute("spaceTypes", spaceTypeRepo.findAll());
 		return "about-us";
 	}
 
