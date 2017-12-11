@@ -58,95 +58,52 @@
 		</section>
 		<section class="filter">Filters
 
-		<h4>Parking</h4>
-		<form method="POST">
-		<input name="id" type="hidden" th:value="parking" />
-		<button th:formaction="@{/parking?id=1}">Garage</button>
-		</form>
-
-		<form method="POST">
-		<input name="id" type="hidden" th:value="parking" />
-		<button th:formaction="@{/parking?id=2}">Free Street Parking</button>
-		</form>
-
-		<form method="POST">
-		<input name="id" type="hidden" th:value="parking" />
-		<button th:formaction="@{/parking?id=3}">Parking Lot</button>
-		</form>
-
-		<h4>Entrance Cost</h4>
-		<form method="POST">
-		<input name="id" type="hidden" th:value="cost" />
-		<button th:formaction="@{/cost?id=1}">Free Entry</button>
-		</form>
-
-		<form method="POST">
-		<input name="id" type="hidden" th:value="cost" />
-		<button th:formaction="@{/cost?id=3}">$</button>
-		</form>
-
-		<form method="POST">
-		<input name="id" type="hidden" th:value="cost" />
-		<button th:formaction="@{/cost?id=4}">$$</button>
-		</form>
-
-		<form method="POST">
-		<input name="id" type="hidden" th:value="cost" />
-		<button th:formaction="@{/cost?id=2}">$$$</button>
-		</form>
-
-		<form method="POST">
-		<input name="id" type="hidden" th:value="cost" />
-		<button th:formaction="@{/cost?id=5}">Coffee for Entry</button>
-		</form>
-
-		<h4>Entrance + Parking</h4>
-		<form method="POST">
-		<input name="id" type="hidden" th:value="cost-parking" />
-		<button th:formaction="@{/cost-parking?cost-id=1&amp;parking-id=1}">Free Entry + Garage</button>
-		</form>
-
-		<form method="POST">
-		<input name="id" type="hidden" th:value="cost-parking" />
-		<button th:formaction="@{/cost-parking?cost-id=1&amp;parking-id=3}">Free Entry + Parking Lot</button>
-		</form>
-
-		<form method="POST">
-		<input name="id" type="hidden" th:value="cost-parking" />
-		<button th:formaction="@{/cost-parking?cost-id=1&amp;parking-id=2}">Free Entry + Street Parking</button>
-		</form>
-
-		<form method="POST">
-		<input name="id" type="hidden" th:value="cost-parking" />
-		<button th:formaction="@{/cost-parking?cost-id=2&amp;parking-id=1}">$$$ + Garage</button>
-		</form>
-
-		<form method="POST">
-		<input name="id" type="hidden" th:value="cost-parking" />
-		<button th:formaction="@{/cost-parking?cost-id=3&amp;parking-id=2}">$$ + Street Parking</button>
-		</form>
-
-		<form method="POST">
-		<input name="id" type="hidden" th:value="cost-parking" />
-		<button th:formaction="@{/cost-parking?cost-id=3&amp;parking-id=3}">$ + Parking Lot</button>
-		</form>
-
-		<form method="POST">
-		<input name="id" type="hidden" th:value="cost-parking" />
-		<button th:formaction="@{/cost-parking?cost-id=4&amp;parking-id=3}">$$ + Parking Lot</button>
-		</form>
-
-		<form method="POST">
-		<input name="id" type="hidden" th:value="cost-parking" />
-		<button th:formaction="@{/cost-parking?cost-id=5&amp;parking-id=3}">Coffee + Parking Lot</button>
-		</form>
-
-		<form method="POST">
-		<input name="id" type="hidden" th:value="cost-parking" />
-		<button th:formaction="@{/cost-parking?cost-id=5&amp;parking-id=2}">Coffee + Street Parking</button>
-		</form>
-		</section>
-	</div>
+ <!-- parking dropdown -->
+ 
+ <div class="dropdown">
+    <button class="dropbtn">Parking
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+           <a th:href="@{/parking?id=1}">Garage</a>
+           <a th:href="@{/parking?id=2}">Free Street Parking</a>
+           <a th:href="@{/parking?id=3}">Parking Lot</a>
+    </div>
+  </div>
+  
+  <!-- cost dropdown -->
+   <div class="dropdown">
+    <button class="dropbtn">Cost
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+           <a th:href="@{/cost?id=1}">Free Entry</a>
+           <a th:href="@{/cost?id=3}">$</a>
+           <a th:href="@{/cost?id=4}">$$</a>
+           <a th:href="@{/cost?id=2}">$$$</a>
+           <a th:href="@{/cost?id=5}">Coffee for Entry</a>
+    </div>
+  </div>
+  
+  <!-- cost + parking dropdown -->
+   <div class="dropdown">
+    <button class="dropbtn">Cost + Parking
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+     		<a th:href="@{/cost-parking?cost-id=1&amp;parking-id=1}">Free Entry + Garage</a>
+     		<a th:href="@{/cost-parking?cost-id=1&amp;parking-id=3}">Free Entry + Parking Lot</a>
+     		<a th:href="@{/cost-parking?cost-id=1&amp;parking-id=2}">Free Entry + Street Parking</a>
+     		<a th:href="@{/cost-parking?cost-id=2&amp;parking-id=1}">$$$ + Garage</a>
+     		<a th:href="@{/cost-parking?cost-id=3&amp;parking-id=2}">$$ + Street Parking</a>
+     		<a th:href="@{/cost-parking?cost-id=4&amp;parking-id=3}">$$ + Parking Lot</a>
+     		<a th:href="@{/cost-parking?cost-id=3&amp;parking-id=3}">$ + Parking Lot</a>
+     		<a th:href="@{/cost-parking?cost-id=5&amp;parking-id=3}">Coffee + Parking Lot</a>
+     		<a th:href="@{/cost-parking?cost-id=5&amp;parking-id=2}">Coffee + Street Parking</a>
+     </div>
+      </section>
+ 
+  </div>
 
 	<footer>
 

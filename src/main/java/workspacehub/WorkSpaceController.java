@@ -60,7 +60,17 @@ public class WorkSpaceController {
 		return "spaceType";
 	}
 
+	public String parkingFilterButtons(@RequestParam Long id, Model model) {
+		Parking selectedParking = parkingRepo.findOne(id);
+		model.addAttribute("parking", parkingRepo.findOne(id));
+		model.addAttribute("parking", parkingRepo.findAll());
+		model.addAttribute("workSpaces", workspaceHubRepo.findAll());
+		model.addAttribute("workSpaces", workspaceHubRepo.findByParking(selectedParking));
+		return "parking";
+	}
+
 	@RequestMapping("/locations")
+
 
 	public String getLocations(Model model) {
 		model.addAttribute("workspaceHubs", workspaceHubRepo.findAll());
