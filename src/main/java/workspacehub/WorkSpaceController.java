@@ -56,7 +56,7 @@ public class WorkSpaceController {
 	@RequestMapping("/spaceType")
 	public String getOneSpaceType(@RequestParam Long id, Model model) {
 		model.addAttribute("spaceType", spaceTypeRepo.findOne(id));
-		model.addAttribute("spaceTypes", 0.findAll());
+		model.addAttribute("spaceTypes", spaceTypeRepo.findAll());
 		return "spaceType";
 	}
 

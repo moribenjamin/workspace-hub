@@ -29,7 +29,7 @@ public class WorkSpacePopulator implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		SpaceType coworkingSpace = new SpaceType("Co-working Space", "/images/workspace.jpg");
+		SpaceType coworkingSpace = new SpaceType("Co-working Space", "/images/workspace.png");
 		spaceTypeRepo.save(coworkingSpace);
 		SpaceType coffeeShop = new SpaceType("Coffee Shop", "/images/espressomachine.jpg");
 		spaceTypeRepo.save(coffeeShop);
@@ -85,7 +85,7 @@ public class WorkSpacePopulator implements CommandLineRunner {
 				"twitter.com/columbusohlabs", "\"21 E State St, Columbus, OH, 43215\"", "21 E. State Street",
 				"Columbus, OH 43215", "(614) 705-2212",
 				"An upscale coworking "
-				+ "space in Downtown Columbus. Offers private offices, shared spaces, and conference rooms, and will soon offer a Short North location.",
+						+ "space in Downtown Columbus. Offers private offices, shared spaces, and conference rooms, and will soon offer a Short North location.",
 				coworkingSpace, hours1, garage, expensive, cap));
 		workspaceHubRepo.save(new WorkspaceHub("\"Saltmines South\"", "Saltmines South",
 				"/images/workspace/saltmines-south/saltmines-south-inside.png", "email",
@@ -100,7 +100,7 @@ public class WorkSpacePopulator implements CommandLineRunner {
 				"twitter.com/thesaltmines", "\"3820 N High Street, Columbus, OH, 43214\"", "3820 N High Street",
 				"Columbus, OH 43214", "(614) 859-9559",
 				"Casual community of freelancers, entrepreneurs, startup workers for a good price in North Clintonville near Whetstone Library with shared "
-				+ "office space and a conference room.",
+						+ "office space and a conference room.",
 				coworkingSpace, hours2, freeStreet, moderate, cap));
 		workspaceHubRepo.save(new WorkspaceHub("\"The Perch\"", "The Perch", "/images/workspace/perch/1.jpg",
 				"work@theperchshortnorth.com", "theperchshortnorth.com", "https://www.facebook.com/theperchshortnorth/",
@@ -114,7 +114,7 @@ public class WorkSpacePopulator implements CommandLineRunner {
 				"\"4510 Kenny Rd, Columbus, OH, 43220\"", "4510 Kenny Road", "Columbus, OH 43220", "(614) 845-5001",
 				"Upscale coworking, private offices, team rooms, private events.", coworkingSpace, hours4, onSite,
 				moderate, cap));
-		
+
 		workspaceHubRepo.save(new WorkspaceHub("\"Cup O Joe Coffee House\"", "Cup O Joe Coffee House",
 				"/images/coffee/cup-o-joe/cupojoeinside.jpg", "email", "http://www.cupojoe.com/",
 				"https://www.facebook.com/cupojoecoffee/", "twitter.com/cupojoecoffee ",
@@ -147,7 +147,7 @@ public class WorkSpacePopulator implements CommandLineRunner {
 				"\"11 Price Ave, Columbus, OH, 43201\"", "11 Price Avenue", "Columbus, OH 4320", "(614) 300-0648",
 				"Specialty coffee roaster with space to work and meetup.", coffeeShop, hours2, freeStreet, coffee,
 				cap));
-		
+
 		workspaceHubRepo.save(new WorkspaceHub("\"The Point-Otterbein University\"", "The Point-Otterbein University",
 				"/images/library/the-point/point_inside-4.jpg", "email", "https://otterbeinpoint.com/",
 				"https://www.facebook.com/OtterbeinPoint/", "twitter.com/otterbeinpoint",
@@ -167,19 +167,21 @@ public class WorkSpacePopulator implements CommandLineRunner {
 				"\"96 S. Grant Avenue, Columbus, OH, 43215\"", "96 S. Grant Avenue", "Columbus, OH 43215",
 				"(614) 645-2275", "Huge main library with plenty of room to work personally or on a team.", library,
 				hours7, garage, free, cap));
-		workspaceHubRepo.save(new WorkspaceHub("\"Northside Branch-Columbus Library\"", "Northside Branch-Columbus Library",
-				"/images/library/northside-branch/northside branch library meeting rooom.jpg", "email",
-				"http://www.columbuslibrary.org/", "https://www.facebook.com/Columbus-Metropolitan-Library-Northside-Branch-111841245519790/",
-				"twitter.com/columbuslibrary", "\"1423 N High St, Columbus, OH, 43201\"", "1423 N. High Street",
-				"Columbus, OH 43201", "(614) 645-2275", "Brand new library campus south of OSU campus", library,
-				hours7, freeStreet, free, cap));
+		workspaceHubRepo
+				.save(new WorkspaceHub("\"Northside Branch-Columbus Library\"", "Northside Branch-Columbus Library",
+						"/images/library/northside-branch/northside branch library meeting rooom.jpg", "email",
+						"http://www.columbuslibrary.org/",
+						"https://www.facebook.com/Columbus-Metropolitan-Library-Northside-Branch-111841245519790/",
+						"twitter.com/columbuslibrary", "\"1423 N High St, Columbus, OH, 43201\"", "1423 N. High Street",
+						"Columbus, OH 43201", "(614) 645-2275", "Brand new library campus south of OSU campus", library,
+						hours7, freeStreet, free, cap));
 		workspaceHubRepo.save(new WorkspaceHub("\"Worthington Library\"", "Worthington Library",
 				"/images/library/worthington/Worthington_meeting_rooms.jpg", "email", "worthingtonlibraries.org",
 				"https://www.facebook.com/Worthington-Library-10150095364585704/", "twitter.com/worthingtonlib",
 				"\"820 High Street, Worthington, OH, 43085\"", "820 High Street", "Worthington, OH 43085",
 				"614-807-2626", "First come first serve, group study rooms available in Old Worthington.", library,
 				hours7, onSite, free, cap));
-		
+
 		log.info("Parking Garage");
 		log.info("--------------------------------------------");
 		for (WorkspaceHub workspacehub : workspaceHubRepo.findByParking(garage)) {
@@ -301,7 +303,7 @@ public class WorkSpacePopulator implements CommandLineRunner {
 		for (WorkspaceHub workspacehub : workspaceHubRepo.findByCostAndParking(coffee, freeStreet)) {
 			log.info(workspacehub.toString());
 		}
-		
+
 		log.info("");
 	}
 }
