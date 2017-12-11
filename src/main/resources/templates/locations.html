@@ -40,6 +40,7 @@
 		</div>
 		<div id="map"></div>
 	</div>
+<<<<<<< Updated upstream
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
 	</script>
@@ -343,9 +344,38 @@
 				alt="email" /></a> <div class="tooltip"><img src="images/copyright.png" alt="copyright" /> <span class="tooltiptext">Copyright 2017
 		</span></div>
 		</div>
+=======
+
+	
+<footer>
+  <div class="contact-stuff">
+    <a href="https://www.facebook.com/"><img src="images/facebook.png"
+      alt="facebook" /></a> <a href="https://twitter.com/wecancodeit"><img
+      src="images/twitter.png" alt="twitter" /></a> <a href="mailto:email@email.com"><img src="images/email.jpg"
+      alt="email" /></a> <div class="tooltip"><img src="images/copyright.png" alt="copyright" /> <span class="tooltiptext">Copyright 2017
+  </span></div>
+  </div>
+>>>>>>> Stashed changes
 	</footer>
 
 
 </body>
+<<<<<<< Updated upstream
 <script src="js/script.js"></script>
 </html>
+=======
+	<script th:inline="javascript">
+	var data = [];
+	</script>
+	<script th:each="workspaceHub:${workspaceHubs}" th:inline="javascript">
+	data.push({'id': [(${workspaceHub.id})], 'address':[(${workspaceHub.address})], 'name':[(${workspaceHub.name})]});
+	</script>
+<script src="js/script.js"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+	<script async="async" defer="defer"
+		src="https://maps.googleapis.com/maps/api/js?libraries=geometry,drawing&amp;key=AIzaSyCf73m4Z2aFWZnaHsFl4OUFoQgiTTsAZng&amp;v=3&amp;callback=initMap">
+       </script>
+</html>
+>>>>>>> Stashed changes
