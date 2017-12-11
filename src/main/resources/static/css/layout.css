@@ -26,7 +26,7 @@
 display:flex;
 justify-content: center;
 	grid-row: 2/3;
-	
+
 }
 .nearme-icon img {
 	width: 500px;
@@ -64,7 +64,7 @@ footer .contact-stuff{
 	justify-content: center;
 	align-items: center;
 	padding: 20px 20px;
-	
+
 }
 
 footer p {
@@ -86,8 +86,8 @@ footer p {
     text-align: center;
     border-radius: 6px;
     padding: 5px 0;
-    
-   
+
+
     position: absolute;
     z-index: 1;
     bottom: 100%;
@@ -180,7 +180,7 @@ nav .space {
 	grid-template-columns: 7fr 3fr;
 	grid-column-gap: 20px;
 	border-bottom-style: solid;
-	
+
 }
 .card-description {
 	grid-column: 2/3;
@@ -193,7 +193,7 @@ nav .space {
 .card-image {
 	grid-column: 1/2;
 	grid-row: 2/3;
-	 margin: 10px 0px; 
+	 margin: 10px 0px;
 }
 
 
@@ -329,6 +329,10 @@ nav .space {
   display: block;
   text-align: left;
 }
+.placeholder{
+	height: 50px;
+}
+
 
 .dropdown-content a:hover {
   background-color: #ddd;
