@@ -24,7 +24,7 @@ function myFunction(){
 	}else{
 		navbar.classList.remove("sticky");
 	}
-}
+} 
 
 var map;
 var markers = [];

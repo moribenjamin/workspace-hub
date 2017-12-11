@@ -256,8 +256,14 @@ footer p {
 	margin-left: -60px;
 }
 
+
 .tooltip:hover .tooltiptext {
 	visibility: visible;
+  }
+
+nav .space {
+	display: flex;
+	justify-content: space-around;
 }
 
 
@@ -817,3 +823,17 @@ align-items: center; */
 	grid-column: 1/2;
 	grid-row: 2/3;
 	 margin: 10px 0px;
+  }
+  .about-us-container {
+	display: grid;
+	grid-template-columns: 7fr 3fr;
+	grid-column-gap: 20px;
+	margin: 0 auto;
+	max-width: 1000px;
+	padding: 16px 5px;
+}
+
+.about-us-container img {
+	width: 600px;
+	height: 400px;
+}
