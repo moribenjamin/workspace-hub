@@ -46,15 +46,15 @@
 
 			<img class="location-image" th:src="${location.imageUrl}"
 				alt="Picture of Work Space" />
+				<h3 class="location-details">Location Details</h3>
 			<p class="location-address1"
 				th:text="${location.displayAddressLineOne}"></p>
-			<h3 class="location-details">Location Details</h3>
+			
 			<p class="location-address2"
 				th:text="${location.displayAddressLineTwo}"></p>
 			<!-- <p class="location-website" th:text="${location.website}"></p> -->
-			<a class="location-website" th:href="${location.website}">
-				<p>Visit Website</p>
-			</a>
+				<div class = "map2" id="map2"></div>
+			
 			<h3 class="hours">Hours</h3>
 			<p class="location-hours"
 				th:text="'Hours: ' + ${location.hours.hoursTitle}"></p>
@@ -64,7 +64,9 @@
 				th:text="'Cost: ' + ${location.cost.costTitle}"></p>
 			<p class="location-capacity"
 				th:text="'Capacity: ' + ${location.capacity.capacityTitle}"></p>
-			<div class = "map2" id="map2"></div>
+		<a class="location-website" th:href="${location.website}">
+				<p>Visit Website</p>
+			</a>
 		</div>
 
 	</div>

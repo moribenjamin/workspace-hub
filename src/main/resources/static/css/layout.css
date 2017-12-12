@@ -228,7 +228,26 @@ justify-content:center;
 	margin-bottom: 10px;
 	margin-top: 10px;
 }
-
+.container_location {
+	display: flex;
+	justify-content: center;
+	padding: 20px 20px;
+	display:grid;
+}
+.container_location h2 {
+	grid-row: 1/2;
+	margin-bottom: 10px;
+}
+.container_location img {
+	width: 100%;
+}
+.container_location h3 {
+	margin-top: 10px;
+}
+#map2 {
+	height: 200px;
+	margin-top: 10px;
+}
 }
 @media ( min-width : 1100px) {
 * {
