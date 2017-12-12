@@ -38,6 +38,9 @@
 	justify-content: space-around;
 	margin-bottom: 20px;
 }
+.placeholder {
+	margin-bottom: 10px;
+}
 .tooltip {
     position: relative;
     display: inline-block;
@@ -263,6 +266,22 @@ justify-content:center;
 .container_filter p {
 	margin-bottom: 10px;
 }
+.about-us-container {
+	display:flex;
+	flex-direction: column;
+	padding: 20px 20px;
+}
+.about-us-container img {
+	width: 100%;
+	margin-bottom: 20px;
+}
+.about-us-container p {
+	letter-spacing: 2px;
+	 word-spacing: 5px;
+
+}
+}
+
 @media ( min-width : 1100px) {
 * {
 	box-sizing: border-box;
@@ -424,7 +443,7 @@ padding-top: 20px;
 
 .about-us-container {
 	display: grid;
-	grid-template-columns: 7fr 3fr;
+	grid-template-columns: 6fr 3fr;
 	grid-column-gap: 20px;
 	margin: 0 auto;
 	max-width: 1000px;
@@ -760,5 +779,13 @@ align-items: center; */
 }
 #map2 {
 	height: 200px;
+}
+.about-us-container p {
+	letter-spacing: 2px;
+	 word-spacing: 5px;
+	 height: 100%;
+}
+.placeholder {
+	margin-bottom: 10px;
 }
 }
