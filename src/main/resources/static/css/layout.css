@@ -248,6 +248,20 @@ justify-content:center;
 	height: 200px;
 	margin-top: 10px;
 }
+.container_filter {
+	display:flex;
+	flex-direction: column;
+	padding: 20px 20px;
+}
+.container_filter img {
+	width: 100%;
+	margin-bottom: 5px;
+}
+.container_filter h1 {
+	margin-top: 5px;
+}
+.container_filter p {
+	margin-bottom: 10px;
 }
 @media ( min-width : 1100px) {
 * {
@@ -433,7 +447,9 @@ nav .space {
 	flex-direction: column;
 	grid-column: 2/3;
 	height: 100%;
+	
 }
+
 
 .filter p{
 	align-self: center;
