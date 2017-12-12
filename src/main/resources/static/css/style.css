@@ -44,16 +44,7 @@ hr {
 	border: none;
 }
 
-#map {
-	bottom: 0px;
-	height: 100%;
-	left: 362px;
-	position: absolute;
-	right: 0px;
-}
-.map2 {
-height: 200px;
-}
+
 
 .options-box {
 	background: #fff;
@@ -129,16 +120,7 @@ hr {
 	border: none;
 }
 
-#map {
-	bottom: 0px;
-	height: 100%;
-	left: 362px;
-	position: absolute;
-	right: 0px;
-}
-#map2 {
-	height: 200px;
-}
+
 .options-box {
 	background: #fff;
 	border: 1px solid #999;

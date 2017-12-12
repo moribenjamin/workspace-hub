@@ -2,12 +2,12 @@ var spaceTypeImages = document.querySelectorAll('.spacetype-image img');
 
 for (var i = 0; i < spaceTypeImages.length; i++) {
 	spaceTypeImages[i].addEventListener('mouseover', function() {
-		this.style.height = '300px';
-		this.style.width = '400px';
+		this.style.height = '350px';
+		this.style.width = '450px';
 	});
 	spaceTypeImages[i].addEventListener('mouseout', function() {
-		this.style.height = '200px';
-		this.style.width = '330px';
+		this.style.height = '300px';
+		this.style.width = '400px';
 	});
 }
 
@@ -24,7 +24,7 @@ function myFunction(){
 	}else{
 		navbar.classList.remove("sticky");
 	}
-}
+} 
 
 var map;
 var markers = [];
