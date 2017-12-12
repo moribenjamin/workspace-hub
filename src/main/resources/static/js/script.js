@@ -1,5 +1,7 @@
 var spaceTypeImages = document.querySelectorAll('.spacetype-image img');
+const mq = window.matchMedia("(min-width: 1200px)");
 
+if(mq.matches){
 for (var i = 0; i < spaceTypeImages.length; i++) {
 	spaceTypeImages[i].addEventListener('mouseover', function() {
 		this.style.height = '350px';
@@ -9,6 +11,7 @@ for (var i = 0; i < spaceTypeImages.length; i++) {
 		this.style.height = '300px';
 		this.style.width = '400px';
 	});
+}
 }
 
 window.onscroll = function(){
@@ -24,7 +27,7 @@ function myFunction(){
 	}else{
 		navbar.classList.remove("sticky");
 	}
-} 
+}
 
 var map;
 var markers = [];
@@ -118,9 +121,9 @@ function initMap() {
 		});
 		var largeInfowindow = new google.maps.InfoWindow();
 		var defaultIcon = makeMarkerIcon('0091ff');
-	
+
 		var highlightedIcon = makeMarkerIcon('FFFF24');
-	
+
 var geocoder = new google.maps.Geocoder();
 for (var i =0; i<data.length; i++) {
 	address = data[i].address;
@@ -234,4 +237,3 @@ function makeMarkerIcon(markerColor) {
 					34), new google.maps.Size(21, 34));
 	return markerImage;
 }
-
