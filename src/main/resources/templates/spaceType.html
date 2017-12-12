@@ -46,7 +46,7 @@
 				<p class="card-description" th:text="${workspaceHub.description}"></p>
 
 
-				<div id="myModal" class="modal">
+				<!-- <div id="myModal" class="modal">
 
 
 					<div class="modal-content">
@@ -54,7 +54,7 @@
 						<img class="modal-image" th:src="${workspaceHub.imageUrl}" alt="Picture of Work Space" />
 					</div>
 
-				</div>
+				</div> -->
 
 			</div>
 		</section>
@@ -62,7 +62,7 @@
 		<p>Filters</p>
 
  <!-- parking dropdown -->
-
+<div class = "dropdown-filters">
  <div class="dropdown">
     <button class="dropbtn">Parking
       <i class="fa fa-caret-down"></i>
@@ -103,6 +103,8 @@
      		<a th:href="@{/cost-parking?cost-id=3&amp;parking-id=3}">$ + Parking Lot</a>
      		<a th:href="@{/cost-parking?cost-id=5&amp;parking-id=3}">Coffee + Parking Lot</a>
      		<a th:href="@{/cost-parking?cost-id=5&amp;parking-id=2}">Coffee + Street Parking</a>
+     </div>
+     </div>
      </div>
       </section>
 
