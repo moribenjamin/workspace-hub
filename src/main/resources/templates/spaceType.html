@@ -39,7 +39,7 @@
 
 
 		<section class="card-sections">
-			<div class="workspace-card" th:each="workspaceHub: ${spaceType.workspaceHubs}">
+			<div class="workspace-card" th:each="workspaceHub: ${workspaceHubs}">
 					<h3><a th:href = "@{/location(id=${workspaceHub.id})}" th:text="${workspaceHub.displayName}">
 				</a></h3>
 				<img class="card-image" th:src="${workspaceHub.imageUrl}" alt="Picture of Work Space" />

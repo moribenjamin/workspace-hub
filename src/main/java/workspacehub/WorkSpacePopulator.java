@@ -107,9 +107,10 @@ public class WorkSpacePopulator implements CommandLineRunner {
 						+ "office space and a conference room.",
 				coworkingSpace, hours2, freeStreet, moderate, cap3));
 		workspaceHubRepo.save(new WorkspaceHub("\"The Perch\"", "The Perch", "/images/workspace/perch/1.jpg",
-				"work@theperchshortnorth.com", "http://theperchshortnorth.com", "https://www.facebook.com/theperchshortnorth/",
-				"twitter.com/coworkcolumbus", "\"45 E Lincoln St, Columbus, OH, 43215\"", "45 E Lincoln Street",
-				"Columbus, OH 43215", "(614) 769-7131",
+				"work@theperchshortnorth.com", "http://theperchshortnorth.com",
+				"https://www.facebook.com/theperchshortnorth/", "twitter.com/coworkcolumbus",
+				"\"45 E Lincoln St, Columbus, OH, 43215\"", "45 E Lincoln Street", "Columbus, OH 43215",
+				"(614) 769-7131",
 				"Community of independent " + "workers housed in the Short North with plenty of shared office space.",
 				coworkingSpace, hours3, onSite, moderate, cap3));
 		workspaceHubRepo.save(new WorkspaceHub("\"The Hub on Kenney\"", "The Hub on Kenney",
@@ -309,5 +310,6 @@ public class WorkSpacePopulator implements CommandLineRunner {
 		}
 
 		log.info("");
+
 	}
 }
