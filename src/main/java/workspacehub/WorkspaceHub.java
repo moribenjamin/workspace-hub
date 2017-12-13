@@ -158,15 +158,7 @@ public class WorkspaceHub {
 		return displayAddressLineTwo;
 	}
 
-	public boolean isSpaceOpen(Hours hour) {
-		LocalTime now = LocalTime.now();
-		LocalDate date = LocalDate.now();
-		String currentDay = date.getDayOfWeek() + "";
-		if (hour.getHoursTitle().contains(currentDay)) {
-			return true;
-		}
-		return false;
-	}
+	
 
 	@Override
 	public String toString() {
