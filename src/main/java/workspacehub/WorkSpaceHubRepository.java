@@ -1,5 +1,6 @@
 package workspacehub;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
@@ -11,4 +12,7 @@ public interface WorkSpaceHubRepository extends CrudRepository<WorkspaceHub, Lon
 	List<WorkspaceHub> findByCost(Cost cost);
 
 	List<WorkspaceHub> findByCostAndParking(Cost cost, Parking parking);
+
+	Collection<WorkspaceHub> findBySpaceTypeOrderByDisplayNameAsc(SpaceType spacetype);
+
 }
