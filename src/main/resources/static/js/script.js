@@ -129,7 +129,6 @@ for (var i =0; i<data.length; i++) {
 	address = data[i].address;
 	name = data[i].name;
 	idW = data[i].id;
-	console.log(idW);
 	geocoder
 			.geocode(
 					{
@@ -164,13 +163,11 @@ marker.addListener('mouseout', function() {
  google.maps.event.addListener(marker, 'click', function() {
         window.location.href = marker.url;
     });
-					 		console.log(markers.length);
-					 		console.log(locations);
+					 		
 						}
 					});
 	google.maps.event.addDomListener(window, 'load', initMap);
-	console.log(name);
-	console.log(address);
+	
 function populateInfoWindow(marker, infowindow) {
 	if (infowindow.marker != marker) {
 		infowindow.setContent('');

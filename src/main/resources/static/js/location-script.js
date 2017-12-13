@@ -90,8 +90,7 @@ var myCenter;
 							myCenter = results[0].geometry.location;
 								
 							var position = myCenter;
-										console.log(position);
-										console.log(position.lat);
+									
 								var marker = new google.maps.Marker({
 									position : position,
 									name : name,
