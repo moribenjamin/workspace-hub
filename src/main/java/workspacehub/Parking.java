@@ -24,11 +24,11 @@ public class Parking {
 		this.parkingTitle = parkingTitle;
 	}
 
-	public Long getHoursId() {
+	public Long getParkingId() {
 		return parkingId;
 	}
 
-	public String getHoursTitle() {
+	public String getParkingTitle() {
 		return parkingTitle;
 	}
 

@@ -1,5 +1,7 @@
 package workspacehub;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
@@ -19,10 +21,8 @@ public class WorkspaceHub {
 	private Long id;
 
 	private String name;
-	private String email;
-	private String address;
-	private String phoneNumber;
-	private String website;
+	private String displayName;
+	private String imageUrl;
 	@Lob
 	private String description;
 
@@ -31,6 +31,20 @@ public class WorkspaceHub {
 
 	@ManyToMany
 	private Set<Feature> features;
+
+	// @OneToOne
+	// private Address address;
+
+	private String address;
+	private String displayAddressLineOne;
+	private String displayAddressLineTwo;
+
+	private String email;
+
+	private String phoneNumber;
+	private String website;
+	private String facebook;
+	private String twitter;
 
 	@ManyToOne
 	private Hours hours;
@@ -44,17 +58,23 @@ public class WorkspaceHub {
 	protected WorkspaceHub() {
 	}
 
-	public WorkspaceHub(String name, String email, String website, String address, String phoneNumber,
-			String description, SpaceType spaceType, Hours hours, Parking parking, Cost cost, Capacity capacity,
-			Feature... features) {
+	public WorkspaceHub(String name, String displayName, String imageUrl, String email, String website, String facebook, String twitter,
+			String address, String displayAddressLineOne, String displayAddressLineTwo, String phoneNumber, String description, SpaceType spaceType, Hours hours, Parking parking,
+			Cost cost, Capacity capacity, Feature... features) {
 		this.name = name;
-		this.email = email;
-		this.website = website;
-		this.address = address;
-		this.phoneNumber = phoneNumber;
+		this.displayName = displayName;
+		this.imageUrl = imageUrl;
 		this.description = description;
 		this.spaceType = spaceType;
 		this.hours = hours;
+		this.email = email;
+		this.facebook = facebook;
+		this.twitter = twitter;
+		this.phoneNumber = phoneNumber;
+		this.website = website;
+		this.address = address;
+		this.displayAddressLineOne = displayAddressLineOne;
+		this.displayAddressLineTwo = displayAddressLineTwo;
 		this.parking = parking;
 		this.cost = cost;
 		this.capacity = capacity;
@@ -69,20 +89,8 @@ public class WorkspaceHub {
 		return name;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
-
-	public String getWebsite() {
-		return website;
+	public String getImageUrl() {
+		return imageUrl;
 	}
 
 	public String getDescription() {
@@ -113,10 +121,53 @@ public class WorkspaceHub {
 		return capacity;
 	}
 
+	public String getAddress() {
+		return address;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public String getWebsite() {
+		return website;
+	}
+
+	public String getFacebook() {
+		return facebook;
+	}
+
+	public String getTwitter() {
+		return twitter;
+	}
+	
+
+	public String getDisplayName() {
+		return displayName;
+	}
+
+	public String getDisplayAddressLineOne() {
+		return displayAddressLineOne;
+	}
+
+	public String getDisplayAddressLineTwo() {
+		return displayAddressLineTwo;
+	}
+
+	
+
 	@Override
 	public String toString() {
-		return String.format(
-				"WorkspaceHub[name='%s', email='%s', website='%s', address='%s, phoneNumber='%s',description='%s', spaceType='%s',features='%s', hours='%s', parking='%s', cost='%s',capacity='%s']",
-				name, description, spaceType, features, hours, parking, cost, capacity);
+		// return String.format("WorkspaceHub[name='%s', imageUrl='%s',
+		// description='%s', spaceType='%s',features='%s', hours='%s', parking='%s',
+		// cost='%s',capacity='%s',email='%s',address='%s'phoneNumber='%s',website='%s']",
+		// name, imageUrl,
+		// description, spaceType, features, hours, parking, cost,
+		// capacity,email,address,phoneNumber,website, facebook, twitter);
+		return name;
 	}
 }

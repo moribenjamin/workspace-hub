@@ -31,9 +31,13 @@ public class WorkSpaceController {
 	@Resource
 	WorkSpaceHubRepository workspaceHubRepo;
 
-	@RequestMapping("/")
+	@RequestMapping("/splash")
 	public String showAllClasses(Model model) {
+
 		model.addAttribute("spaceTypes", spaceTypeRepo.findAll());
+
+		model.addAttribute("spaceType", spaceTypeRepo.findAll());
+
 		model.addAttribute("workspaceHubs", workspaceHubRepo.findAll());
 		model.addAttribute("parking", parkingRepo.findAll());
 		model.addAttribute("hours", hoursRepo.findAll());
@@ -43,16 +47,77 @@ public class WorkSpaceController {
 		return "splashPage";
 	}
 
-	@RequestMapping("/space_type")
-	public String getOneSpaceType(@RequestParam Long id, Model model) {
-		model.addAttribute("spacetype", spaceTypeRepo.findOne(id));
-		return "spacetype";
-	}
-
-	@RequestMapping("/index")
+	@RequestMapping("/")
 	public String showAllSpaceTypes(Model model) {
 		model.addAttribute("spaceTypes", spaceTypeRepo.findAll());
 		return "spaceTypes";
+	}
+
+	@RequestMapping("/spaceType")
+	public String getOneSpaceType(@RequestParam Long id, Model model) {
+		SpaceType spaceType = spaceTypeRepo.findOne(id);
+		model.addAttribute("spaceType", spaceTypeRepo.findOne(id));
+		model.addAttribute("spaceTypes", spaceTypeRepo.findAll());
+		model.addAttribute("workspaceHubs", workspaceHubRepo.findBySpaceTypeOrderByDisplayNameAsc(spaceType));
+		return "spaceType";
+	}
+
+	public String parkingFilterButtons(@RequestParam Long id, Model model) {
+		Parking selectedParking = parkingRepo.findOne(id);
+		model.addAttribute("parking", parkingRepo.findOne(id));
+		model.addAttribute("parking", parkingRepo.findAll());
+		model.addAttribute("workspaceHubs", workspaceHubRepo.findAll());
+		model.addAttribute("workspaceHubs", workspaceHubRepo.findByParking(selectedParking));
+		return "parking";
+	}
+
+	@RequestMapping("/locations")
+	public String getLocations(Model model) {
+		model.addAttribute("workspaceHubs", workspaceHubRepo.findAll());
+		model.addAttribute("spaceTypes", spaceTypeRepo.findAll());
+		return "locations";
+	}
+
+	@RequestMapping("/location")
+	public String getOneLocation(@RequestParam Long id, Model model) {
+		model.addAttribute("location", workspaceHubRepo.findOne(id));
+		model.addAttribute("spaceTypes", spaceTypeRepo.findAll());
+		return "location";
+	}
+
+	@RequestMapping("/parking")
+	public String parkingFilter(@RequestParam("id") Long id, Model model) {
+		Parking selectedParking = parkingRepo.findOne(id);
+		model.addAttribute("workspaceHubs", workspaceHubRepo.findByParking(selectedParking));
+		model.addAttribute("spaceTypes", spaceTypeRepo.findAll());
+		return "parking";
+
+	}
+
+	@RequestMapping("/cost")
+	public String costFilter(@RequestParam("id") Long id, Model model) {
+		Cost selectedCost = costRepo.findOne(id);
+		model.addAttribute("workspaceHubs", workspaceHubRepo.findByCost(selectedCost));
+		model.addAttribute("spaceTypes", spaceTypeRepo.findAll());
+		return "cost";
+
+	}
+
+	@RequestMapping("/cost-parking")
+	public String costParkingFilter(@RequestParam("cost-id") Long costId, @RequestParam("parking-id") Long parkingId,
+			Model model) {
+		Cost selectedCost = costRepo.findOne(costId);
+		Parking selectedParking = parkingRepo.findOne(parkingId);
+		model.addAttribute("workspaceHubs", workspaceHubRepo.findByCostAndParking(selectedCost, selectedParking));
+		model.addAttribute("spaceTypes", spaceTypeRepo.findAll());
+		return "cost-parking";
+
+	}
+
+	@RequestMapping("/about-us")
+	public String aboutUs(Model model) {
+		model.addAttribute("spaceTypes", spaceTypeRepo.findAll());
+		return "about-us";
 	}
 
 }

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title>Workspace Hub -- Spacetype</title>
+<link href="https://fonts.googleapis.com/css?family=Carme"
+	rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="css/layout.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+
+
+	<header>
+	  		<img src="images/Logo.png" alt="logo" class="logo-image"/>
+	  		<h1>Discover shared spaces or private rooms perfect for any work-day </h1>
+	  	</header>
+
+			<div class="placeholder">
+			 <nav class = "navbar">
+			<a href="/">Home</a>
+			<div class="dropdown">
+			   <button class="dropbtn">Categories
+			     <i class="fa fa-caret-down"></i>
+			   </button>
+			   <div class="dropdown-content">
+			          <a th:each="spaceType: ${spaceTypes}" th:text="${spaceType.spaceTitle}" th:href="@{/spaceType(id=${spaceType.spaceTypeId})}"></a>
+			   </div>
+			 </div>
+			 <a href="/locations.html">Locations</a>
+			        <a href="/about-us.html">About Us</a>
+			    </nav>
+			    </div>
+	<div class="container_location">
+
+
+		<h2 class="location-name" th:text="${location.displayName}"></h2>
+		<div class="location-info">
+
+
+
+			<img class="location-image" th:src="${location.imageUrl}"
+				alt="Picture of Work Space" />
+				<h3 class="location-details">Location Details</h3>
+			<p class="location-address1"
+				th:text="${location.displayAddressLineOne}"></p>
+			
+			<p class="location-address2"
+				th:text="${location.displayAddressLineTwo}"></p>
+			<!-- <p class="location-website" th:text="${location.website}"></p> -->
+				<div class = "map2" id="map2"></div>
+			
+			<h3 class="hours">Hours</h3>
+			<p class="location-hours"
+				th:text="'Hours: ' + ${location.hours.hoursTitle}"></p>
+			<p class="location-parking"
+				th:text="'Parking: ' + ${location.parking.parkingTitle}"></p>
+			<p class="location-cost"
+				th:text="'Cost: ' + ${location.cost.costTitle}"></p>
+			<p class="location-capacity"
+				th:text="'Capacity: ' + ${location.capacity.capacityTitle}"></p>
+		<a class="location-website" th:href="${location.website}">
+				<p>Visit Website</p>
+			</a>
+		</div>
+
+	</div>
+	 <footer>
+
+		 <div class="contact-stuff">
+ 			<a href="https://www.facebook.com/"><img src="images/facebook.png"
+ 				alt="facebook" /></a> <a href="https://twitter.com/wecancodeit"><img
+ 				src="images/twitter.png" alt="twitter" /></a> <a href="mailto:email@email.com"><img src="images/email.jpg"
+ 				alt="email" /></a> <div class="tooltip"><img src="images/copyright.png" alt="copyright" /> <span class="tooltiptext">Copyright 2017
+ 		</span></div>
+ 		</div>
+	</footer>
+
+
+</body>
+<script src="js/location-script.js"></script>
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
+	<script async="async" defer="defer"
+		src="https://maps.googleapis.com/maps/api/js?libraries=geometry,drawing&amp;key=AIzaSyCf73m4Z2aFWZnaHsFl4OUFoQgiTTsAZng&amp;v=3&amp;callback=initMap">
+       </script>
+	<script th:inline="javascript">
+       var address = [(${location.address})] ;
+       var name =  [(${location.name})];
+       console.log(address);
+       </script>
+</html>
