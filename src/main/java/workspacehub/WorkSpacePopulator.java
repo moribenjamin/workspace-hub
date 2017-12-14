@@ -114,7 +114,7 @@ public class WorkSpacePopulator implements CommandLineRunner {
 				"Community of independent " + "workers housed in the Short North with plenty of shared office space.",
 				coworkingSpace, hours3, onSite, moderate, cap3));
 		workspaceHubRepo.save(new WorkspaceHub("\"The Hub on Kenney\"", "The Hub on Kenney",
-				"/images/workspace/hub/hubinside.jpg", "email", "thehubonkenny.com",
+				"/images/workspace/hub/hubinside.jpg", "email", "http://thehubonkenny.com",
 				"https://www.facebook.com/thehubonkenny/", "twitter.com/thehubonkenny",
 				"\"4510 Kenny Rd, Columbus, OH, 43220\"", "4510 Kenny Road", "Columbus, OH 43220", "(614) 845-5001",
 				"Upscale coworking, private offices, team rooms, private events.", coworkingSpace, hours4, onSite,
